@@ -1,9 +1,8 @@
 # WDProjRbOgerioRosario
-# WDProjOgerioRosario  
-# VALORANT HUB 
+## VALORANT HUB 
 ##### Logo
 ![Logo](./assets/val.png "Logo")
-# Master the Art of Valorant  
+## Master the Art of Valorant  
 
 ## Description  
 Valorant Hub is a website built for fans and players of [translate:Valorant], Riot Games’ tactical first-person shooter that’s taken the gaming world by storm. Our goal is to gather all the important info—agents, weapons, maps, and esports news—in one easy place so players, whether casual or competitive, can get better at the game. We want to help you understand gameplay mechanics, keep up-to-date with the latest patches and tournaments, and improve strategies with clear, useful tips.  
