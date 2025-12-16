@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valorant Hub — Agents</title>
+
+  <link href="https://fonts.cdnfonts.com/css/valorant" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- main site styles -->
+  <link rel="stylesheet" href="styles.css" />
+<link rel="icon" type="image/png" href="/public/assets/valorant.png" />
+<script src="theme.js" defer></script>
+
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo">VALORANT HUB</div>
+
+    <nav class="main-nav">
+      <a href="../index.html" class="active">Home</a>
+      <a href="/public/agents.html">Agents</a>
+      <a href="/public/weapons.html">Weapons</a>
+      <a href="JJJ">Maps</a>
+      <a href="JJJ">Esports</a>
+    </nav>
+
+    <button id="theme-toggle"
+            class="theme-toggle"
+            type="button"
+            aria-label="Toggle light and dark theme"
+            aria-pressed="true">
+      <span class="theme-icon">🌙</span>
+      <span class="theme-label">Theme</span>
+    </button>
+  </header>
+
+  <main class="agents-layout">
+    <!-- LEFT: AGENT GRID -->
+    <section class="agents-list">
+      <header class="section-header">
+        <h1 class="section-title">Agents</h1>
+        <p class="section-desc">
+          Valorant has duelists, initiators, controllers, and sentinels; each agent’s kit changes how your team attacks and defends every round.
+        </p>
+      </header>
+
+      <!-- ROLE FILTER TAGS -->
+      <div class="weapon-tags agent-tags">
+        <span class="tag tag-all">All</span>
+        <span class="tag">Duelist</span>
+        <span class="tag">Initiator</span>
+        <span class="tag">Controller</span>
+        <span class="tag">Sentinel</span>
+      </div>
+
+      <!-- GRID OF FLIP CARDS -->
+      <div class="agent-grid">
+        <!-- ========== DUELISTS ========== -->
+        <!-- Jett -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Duelist"
+                data-agent="Jett">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/jett.png" alt="Jett">
+              <h3>Jett</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Duelist · Korea</p>
+              <p class="agent-blurb">
+                High‑mobility entry who dashes into space and takes first duels with vertical smokes and updrafts.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>Dash:</strong> burst reposition after a kill.</li>
+                <li><strong>Cloudburst:</strong> fast smokes to cover entries.</li>
+                <li><strong>Blade Storm (X):</strong> accurate throwing knives.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- Phoenix -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Duelist"
+                data-agent="Phoenix">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/phx.png" alt="Phoenix">
+              <h3>Phoenix</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Duelist · U.K.</p>
+              <p class="agent-blurb">
+                Self‑sufficient duelist who heals through fire and uses curve flashes to take space alone.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>Curveball:</strong> bendable flash orbs.</li>
+                <li><strong>Hot Hands:</strong> healing flame pool.</li>
+                <li><strong>Run It Back (X):</strong> second‑life entry.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- Reyna -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Duelist"
+                data-agent="Reyna">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/reyna.png" alt="Reyna">
+              <h3>Reyna</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Duelist · Mexico</p>
+              <p class="agent-blurb">
+                Snowball duelist who becomes stronger with every kill using self‑heals and invulnerability dismiss.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>Leer:</strong> ethereal eye that nearsights.</li>
+                <li><strong>Devour/Dismiss:</strong> orb‑based heal or escape.</li>
+                <li><strong>Empress (X):</strong> combat stim and faster cycling.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- Raze -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Duelist"
+                data-agent="Raze">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/raze.png" alt="Raze">
+              <h3>Raze</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Duelist · Brazil</p>
+              <p class="agent-blurb">
+                Explosive duelist who clears angles with grenades and satchel‑boosts into sites.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>Blast Pack:</strong> mobility and damage satchels.</li>
+                <li><strong>Paint Shells:</strong> cluster grenade.</li>
+                <li><strong>Showstopper (X):</strong> high‑damage rocket.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- Yoru -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Duelist"
+                data-agent="Yoru">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/yoru.png" alt="Yoru">
+              <h3>Yoru</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Duelist · Japan</p>
+              <p class="agent-blurb">
+                Trickster duelist who fakes rotations, teleports through rifts, and uses flashes to set up unexpected entries.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>Gatecrash:</strong> teleport anchor.</li>
+                <li><strong>Fakeout:</strong> decoy footsteps.</li>
+                <li><strong>Dimensional Drift (X):</strong> scouting invis run.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- Neon -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Duelist"
+                data-agent="Neon">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/neon.png" alt="Neon">
+              <h3>Neon</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Duelist · Philippines</p>
+              <p class="agent-blurb">
+                Speed‑based duelist who sprints and slides through her own wall to overwhelm defenders.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>High Gear:</strong> sprint and slide.</li>
+                <li><strong>Fast Lane:</strong> double wall to cut vision.</li>
+                <li><strong>Overdrive (X):</strong> lightning beam ultimate.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- Iso -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Duelist"
+                data-agent="Iso">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/iso.png" alt="Iso">
+              <h3>Iso</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Duelist · China</p>
+              <p class="agent-blurb">
+                Aim‑duelist who isolates 1v1s with a dueling arena and shields himself after kills.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>Double Tap:</strong> shield after damage.</li>
+                <li><strong>Contingency:</strong> moving bulletproof wall.</li>
+                <li><strong>Kill Contract (X):</strong> isolated 1v1 zone.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- ========== INITIATORS ========== -->
+
+        <!-- Sova -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Initiator"
+                data-agent="Sova">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/sova.png" alt="Sova">
+              <h3>Sova</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Initiator · Russia</p>
+              <p class="agent-blurb">
+                Recon initiator who reveals enemies with darts and drone to set up precise executes.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>Recon Bolt:</strong> sonar arrow scans areas.</li>
+                <li><strong>Owl Drone:</strong> scouting drone with dart.</li>
+                <li><strong>Hunter’s Fury (X):</strong> global line beams.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- Skye -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Initiator"
+                data-agent="Skye">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/skye.png" alt="Skye">
+              <h3>Skye</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Initiator · Australia</p>
+              <p class="agent-blurb">
+                Team‑focused initiator who uses animal trinkets to flash, trail and heal her allies.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>Guiding Light:</strong> controllable bird flash.</li>
+                <li><strong>Trailblazer:</strong> tiger that concusses.</li>
+                <li><strong>Seekers (X):</strong> homing orbs track enemies.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- Breach -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Initiator"
+                data-agent="Breach">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/breah.png" alt="Breach">
+              <h3>Breach</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Initiator · Sweden</p>
+              <p class="agent-blurb">
+                Line‑up initiator who sends shockwaves through walls to stun and displace opponents.
+              <ul class="agent-ability-list">
+                <li><strong>Flashpoint:</strong> wall‑flash grenades.</li>
+                <li><strong>Fault Line:</strong> long stun quake.</li>
+                <li><strong>Rolling Thunder (X):</strong> massive cone knock‑up.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- Fade -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Initiator"
+                data-agent="Fade">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/fade.png" alt="Fade">
+              <h3>Fade</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Initiator · Turkey</p>
+              <p class="agent-blurb">
+                Information hunter who marks enemies with terror trails and seizing orbs.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>Haunt:</strong> vision‑granting orb.</li>
+                <li><strong>Seize:</strong> tether that holds enemies.</li>
+                <li><strong>Nightfall (X):</strong> fear wave that deafens.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- KAY/O -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Initiator"
+                data-agent="KAYO">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/kayo.png" alt="KAY/O">
+              <h3>KAY/O</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Initiator · War Machine</p>
+              <p class="agent-blurb">
+                Suppression‑based initiator who disables enemy abilities and creates safe entries with flashes.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>ZERO/point:</strong> knife that suppresses.</li>
+                <li><strong>FLASH/drive:</strong> pop flash grenades.</li>
+                <li><strong>NULL/cmd (X):</strong> AoE suppression ult.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- Gekko -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Initiator"
+                data-agent="Gekko">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/gekko.png" alt="Gekko">
+              <h3>Gekko</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Initiator · U.S.A.</p>
+              <p class="agent-blurb">
+                Pet‑based initiator whose creatures plant, defuse, and provide crowd control before being reclaimed.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>Dizzy:</strong> AoE blind projectile.</li>
+                <li><strong>Wingman:</strong> plant/defuse buddy.</li>
+                <li><strong>Thrash (X):</strong> controllable stun chomp.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- Tejo (new initiator) -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Initiator"
+                data-agent="Tejo">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/tejo.png" alt="Tejo">
+              <h3>Tejo</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Initiator · India</p>
+              <p class="agent-blurb">
+                Recent initiator who manipulates space and vision to force enemies into awkward angles.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>Space control:</strong> orbs that distort lines.</li>
+                <li><strong>Info tools:</strong> reveal and pressure utility.</li>
+                <li><strong>Ultimate:</strong> team‑fight initiation.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- ========== CONTROLLERS ========== -->
+
+        <!-- Brimstone -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Controller"
+                data-agent="Brimstone">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/brim.png" alt="Brimstone">
+              <h3>Brimstone</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Controller · U.S.A.</p>
+              <p class="agent-blurb">
+                Simple sky‑smoker who drops precise smokes and area denial from a tactical map.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>Sky Smokes:</strong> up to three orbs at once.</li>
+                <li><strong>Stim Beacon:</strong> combat buff field.</li>
+                <li><strong>Orbital Strike (X):</strong> beam that clears plant spots.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- Omen -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Controller"
+                data-agent="Omen">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/omen.png" alt="Omen">
+              <h3>Omen</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Controller · Unknown</p>
+              <p class="agent-blurb">
+                Lurk‑oriented smoker who teleports and throws long‑range paranoia flashes.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>Dark Cover:</strong> steerable smokes.</li>
+                <li><strong>Paranoia:</strong> narrow, long flash.</li>
+                <li><strong>From the Shadows (X):</strong> global teleport.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- Viper -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Controller"
+                data-agent="Viper">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/viper.png" alt="Viper">
+              <h3>Viper</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Controller · U.S.A.</p>
+              <p class="agent-blurb">
+                Poison controller who manages fuel to run walls, smokes, and post‑plant mollies.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>Toxic Screen:</strong> long fuel wall.</li>
+                <li><strong>Poison Cloud:</strong> re‑usable one‑way orb.</li>
+                <li><strong>Viper’s Pit (X):</strong> massive decay zone.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- Astra -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Controller"
+                data-agent="Astra">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/astra.png" alt="Astra">
+              <h3>Astra</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Controller · Ghana</p>
+              <p class="agent-blurb">
+                Cosmic controller who places stars to convert into smokes, stuns, and pulls from astral form.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>Stars:</strong> global placements.</li>
+                <li><strong>Nebula/Gravity Well:</strong> smoke or pull.</li>
+                <li><strong>Cosmic Divide (X):</strong> wall that blocks bullets and sound.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- Harbor -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Controller"
+                data-agent="Harbor">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/harbor.png" alt="Harbor">
+              <h3>Harbor</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Controller · India</p>
+              <p class="agent-blurb">
+                Water‑controller who shapes curved walls and shielding waves to push sites.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>High Tide:</strong> steerable water wall.</li>
+                <li><strong>Cove:</strong> bullet‑blocking bubble.</li>
+                <li><strong>Reckoning (X):</strong> concussive geyser strikes.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- Clove -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Controller"
+                data-agent="Clove">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/clove.png" alt="Clove">
+              <h3>Clove</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Controller · Scotland</p>
+              <p class="agent-blurb">
+                Aggressive controller who can smoke after dying and briefly return from death to keep fighting.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>Smokes:</strong> post‑death placement.</li>
+                <li><strong>Decay utility:</strong> weakens enemies.</li>
+                <li><strong>Ultimate:</strong> short‑term self‑revive.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- ========== SENTINELS (INCL. VYSE, DEADLOCK, WAYLAY, VETO) ========== -->
+
+        <!-- Sage -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Sentinel"
+                data-agent="Sage">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/sage.png" alt="Sage">
+              <h3>Sage</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Sentinel · China</p>
+              <p class="agent-blurb">
+                Classic support sentinel with slows, a wall, and combat revive on her ultimate.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>Barrier Orb:</strong> solid wall for blocking.</li>
+                <li><strong>Slow Orbs:</strong> fields that slow and silence jumps.</li>
+                <li><strong>Resurrection (X):</strong> revives a teammate.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- Cypher -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Sentinel"
+                data-agent="Cypher">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/cypher.png" alt="Cypher">
+              <h3>Cypher</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Sentinel · Morocco</p>
+              <p class="agent-blurb">
+                Info sentinel who wires and cameras sites, tracking flanks and catching lurkers.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>Trapwires:</strong> reveal and slow enemies.</li>
+                <li><strong>Spycam:</strong> remote camera with dart.</li>
+                <li><strong>Neural Theft (X):</strong> pings living enemies after a kill.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- Killjoy -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Sentinel"
+                data-agent="Killjoy">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/kj.png" alt="Killjoy">
+              <h3>Killjoy</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Sentinel · Germany</p>
+              <p class="agent-blurb">
+                Gadget sentinel who locks sites with turrets, nanoswarms, and a round‑winning lockdown ultimate.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>Turret:</strong> auto‑targeting gun.</li>
+                <li><strong>Nanoswarm:</strong> hidden grenade clusters.</li>
+                <li><strong>Lockdown (X):</strong> mass detain field.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- Chamber -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Sentinel"
+                data-agent="Chamber">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/chamber.png" alt="Chamber">
+              <h3>Chamber</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Sentinel · France</p>
+              <p class="agent-blurb">
+                Operator‑style sentinel who mixes traps with aggressive teleport peeks and a custom sniper.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>Trademark:</strong> slowing trap.</li>
+                <li><strong>Rendezvous:</strong> teleport anchors.</li>
+                <li><strong>Tour De Force (X):</strong> high‑power sniper.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- Deadlock -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Sentinel"
+                data-agent="Deadlock">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/dl.png" alt="Deadlock">
+              <h3>Deadlock</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Sentinel · Norway</p>
+              <p class="agent-blurb">
+                Trap‑focused sentinel using barriers and nets to slow pushes and isolate targets.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>Sonic Sensors:</strong> detect noisy movement.</li>
+                <li><strong>Barrier Mesh:</strong> segmented wall.</li>
+                <li><strong>Annihilation (X):</strong> cocoon that pulls an enemy along a path.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- Vyse -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Sentinel"
+                data-agent="Vyse">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/vyse.png" alt="Vyse">
+              <h3>Vyse</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Sentinel · Unknown</p>
+              <p class="agent-blurb">
+                Modern sentinel whose metal barriers and traps reshape angles and punish rushes.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>Metal walls:</strong> block sight and bullets.</li>
+                <li><strong>Control zones:</strong> punish entries.</li>
+                <li><strong>Ultimate:</strong> fortified site lockdown.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- Waylay -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Sentinel"
+                data-agent="Waylay">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/waylay.png" alt="Waylay">
+              <h3>Waylay</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Sentinel · New</p>
+              <p class="agent-blurb">
+                Recent sentinel whose traps and cover tools specialize in punishing over‑aggression and re‑taking space.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>Traps:</strong> reveal and delay flanks.</li>
+                <li><strong>Cover tools:</strong> temporary safe zones.</li>
+                <li><strong>Ultimate:</strong> site‑control lockdown.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+
+        <!-- Veto -->
+        <button class="agent-card flip-card reveal-on-scroll"
+                data-role="Sentinel"
+                data-agent="Veto">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/public/assets/veto.png" alt="Veto">
+              <h3>Veto</h3>
+            </div>
+            <div class="flip-card-back">
+              <p class="agent-role-pill">Sentinel · Senegal</p>
+              <p class="agent-blurb">
+                Utility‑destroying sentinel who shuts down enemy gadgets and teleports between traps, redefining defensive play.
+              </p>
+              <ul class="agent-ability-list">
+                <li><strong>Interceptor:</strong> device that deletes incoming utility.</li>
+                <li><strong>Crosscut:</strong> ground vortex teleport anchor.</li>
+                <li><strong>Evolution (X):</strong> mutated state with regen and debuff immunity.</li>
+              </ul>
+            </div>
+          </div>
+        </button>
+      </div>
+    </section>
+
+    <!-- RIGHT: PREVIEW PANEL (optional JS‑driven details) -->
+    <aside class="agent-preview-panel">
+      <p class="agent-role">SELECT AN AGENT</p>
+      <h2 class="agent-name">Hover or tap a card</h2>
+      <p class="agent-desc">
+        Flip a card to see each agent’s role, playstyle, and key abilities, then use the role filter to compare duelists, controllers, initiators, and sentinels side‑by‑side.
+      </p>
+
+      <figure class="agent-preview-media">
+        <img src="/public/assets/splas.jpg" alt="Agent preview">
+      </figure>
+    </aside>
+  </main>
+
+  <!-- Shared footer -->
+  <footer class="footer">
+    <div class="footer-left">
+      <div class="footer-brand">VALORANT HUB</div>
+      <p>
+        Fan‑made Valorant guide for agents, weapons, maps, and esports. Not affiliated with Riot Games.
+      </p>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="/public/agents.html">Agents</a>
+        <a href="/public/weapons.html">Weapons</a>
+        <a href="maps.html">Maps</a>
+        <a href="esports.html">Esports</a>
+      </div>
+    </div>
+
+    <div class="social-icons">
+      <ul>
+        <li><a href="https://playvalorant.com/en-gb/"><span class="icon"><i class="fa-brands fa-github"></i></span></a></li>
+        <li><a href="https://www.instagram.com/oregaknows/"><span class="icon"><i class="fa-brands fa-x-twitter"></i></span></a></li>
+        <li><a href="https://www.instagram.com/jiw2ng/"><span class="icon"><i class="fa-brands fa-instagram"></i></span></a></li>
+      </ul>
+    </div>
+    </div>
+    <p class="copyright">
+      © 2025 @NathanOgerioYsaRosario2025. All rights reserved.
+    </p>
+  </div>
+  </footer>
+
+  <script src="agents.js" defer></script>
+</body>
+</html>
+
+

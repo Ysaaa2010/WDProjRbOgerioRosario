@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valorant Hub — Weapons</title>
+
+  <link href="https://fonts.cdnfonts.com/css/valorant" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- main site styles -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- weapons‑specific styles (with flip card + layout) -->
+  <link rel="stylesheet" href="weapons.css" />
+<link rel="icon" type="image/png" href="/public/assets/valorant.png" />
+<script src="theme.js" defer></script>
+
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo">VALORANT HUB</div>
+
+    <nav class="main-nav">
+      <a href="../index.html">Home</a>
+      <a href="/public/agents.html">Agents</a>
+      <a href="/public/weapons.html" class="active">Weapons</a>
+      <a href="maps.html">Maps</a>
+      <a href="esports.html">Esports</a>
+       <a href="esports.html">About Us</a>
+    </nav>
+
+    <button id="theme-toggle"
+            class="theme-toggle"
+            type="button"
+            aria-label="Toggle light and dark theme"
+            aria-pressed="true">
+      <span class="theme-icon">🌙</span>
+      <span class="theme-label">Theme</span>
+    </button>
+  </header>
+
+  <main class="weapons-page">
+    <!-- HERO -->
+    <section class="weapons-hero">
+      <div>
+        <p class="hero-kicker">Plan your buy round</p>
+        <h1 class="section-title">Weapon Arsenal</h1>
+        <p class="section-desc">
+          Valorant’s arsenal spans pistols, SMGs, shotguns, rifles, snipers, heavies, melee and armor, so each round’s buy can match your team’s game plan.
+        </p>
+      </div>
+      <div class="weapon-tags">
+        <span class="tag tag-all">All</span>
+        <span class="tag">Sidearm</span>
+        <span class="tag">SMG</span>
+        <span class="tag">Shotgun</span>
+        <span class="tag">Rifle</span>
+        <span class="tag">Sniper</span>
+        <span class="tag">Heavy</span>
+        <span class="tag">Melee</span>
+        <span class="tag">Shields</span>
+      </div>
+    </section>
+
+    <!-- WEAPONS GRID -->
+    <section class="weapons-grid">
+
+      <!-- ========== SIDEARMS ========== -->
+
+      <!-- Classic -->
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="Sidearm">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/public/assets/classic.jpg" alt="Classic">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Classic</h2>
+              <p class="weapon-type">Sidearm</p>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Classic</h3>
+              <span class="weapon-meta">0 · Sidearm</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge blue">Default</span>
+              <span class="weapon-badge green">Burst Alt</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Head</span>
+                <span class="weapon-stat-value">78 close</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Body</span>
+                <span class="weapon-stat-value">26 close</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Fire rate</span>
+                <span class="weapon-stat-value">6.75 r/s</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Free spawn pistol with accurate taps and a close‑range three‑round burst alt fire.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Shorty -->
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="Sidearm">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/public/assets/shorty.png" alt="Shorty">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Shorty</h2>
+              <p class="weapon-type">Sidearm</p>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Shorty</h3>
+              <span class="weapon-meta">150 · Sidearm</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge red">Shotgun</span>
+              <span class="weapon-badge green">Close Corners</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Pellets</span>
+                <span class="weapon-stat-value">12 / shot</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Range</span>
+                <span class="weapon-stat-value">Very close</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">2 rounds</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Tiny pocket shotgun that deletes enemies if they walk into your crosshair at point‑blank range.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Frenzy -->
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="Sidearm">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/public/assets/frenzy.png" alt="Frenzy">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Frenzy</h2>
+              <p class="weapon-type">Sidearm</p>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Frenzy</h3>
+              <span class="weapon-meta">450 · Sidearm</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge green">Auto</span>
+              <span class="weapon-badge red">Close Range</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Head</span>
+                <span class="weapon-stat-value">78 close</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Fire rate</span>
+                <span class="weapon-stat-value">13.3 r/s</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">13 rounds</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Fully automatic pistol that thrives in chaotic close‑quarters fights and pistol‑round rushes.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Ghost -->
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="Sidearm">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/public/assets/ghost.png" alt="Ghost">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Ghost</h2>
+              <p class="weapon-type">Sidearm</p>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Ghost</h3>
+              <span class="weapon-meta">500 · Sidearm</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge blue">Silent</span>
+              <span class="weapon-badge green">Pistol Round</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Head</span>
+                <span class="weapon-stat-value">105 close</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Body</span>
+                <span class="weapon-stat-value">30 close</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">15 rounds</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Silenced, accurate pistol favored on pistol rounds for long‑range head taps.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Sheriff -->
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="Sidearm">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/public/assets/sheriff.png" alt="Sheriff">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Sheriff</h2>
+              <p class="weapon-type">Sidearm</p>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Sheriff</h3>
+              <span class="weapon-meta">800 · Sidearm</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge red">One‑Tap</span>
+              <span class="weapon-badge blue">Eco Buy</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Head</span>
+                <span class="weapon-stat-value">159 close</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Range</span>
+                <span class="weapon-stat-value">All ranges</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">6 rounds</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              High‑risk, high‑reward hand cannon that can one‑tap rifles on eco rounds.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- ========== SMGS ========== -->
+
+      <!-- Stinger -->
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="SMG">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/public/assets/stinger.png" alt="Stinger">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Stinger</h2>
+              <p class="weapon-type">SMG</p>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Stinger</h3>
+              <span class="weapon-meta">950 · SMG</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge green">Bonus</span>
+              <span class="weapon-badge red">Spray</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Fire rate</span>
+                <span class="weapon-stat-value">16 r/s</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Range</span>
+                <span class="weapon-stat-value">Very close</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">20 rounds</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Budget SMG that overwhelms enemies at close range on bonus or force‑buy rounds.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Spectre -->
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="SMG">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/public/assets/specter.png" alt="Spectre">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Spectre</h2>
+              <p class="weapon-type">SMG</p>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Spectre</h3>
+              <span class="weapon-meta">1600 · SMG</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge blue">Silent</span>
+              <span class="weapon-badge green">Run‑and‑Gun</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Fire rate</span>
+                <span class="weapon-stat-value">13.3 r/s</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Range</span>
+                <span class="weapon-stat-value">Close–mid</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">30 rounds</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Versatile SMG for tight maps, excelling in bonus rounds and anti‑ecos.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- ========== SHOTGUNS ========== -->
+
+      <!-- Bucky -->
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="Shotgun">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/public/assets/bucky.png" alt="Bucky">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Bucky</h2>
+              <p class="weapon-type">Shotgun</p>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Bucky</h3>
+              <span class="weapon-meta">850 · Shotgun</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge red">Pellets</span>
+              <span class="weapon-badge green">Alt Range</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mode</span>
+                <span class="weapon-stat-value">Primary / Alt</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Range</span>
+                <span class="weapon-stat-value">Close–mid</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">5 shells</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Utility shotgun with a powerful close blast and alt‑fire for mid‑range pop shots.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Judge -->
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="Shotgun">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/public/assets/judge.png" alt="Judge">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Judge</h2>
+              <p class="weapon-type">Shotgun</p>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Judge</h3>
+              <span class="weapon-meta">1850 · Shotgun</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge red">Auto</span>
+              <span class="weapon-badge green">Smokes</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Fire rate</span>
+                <span class="weapon-stat-value">3.5 r/s</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Range</span>
+                <span class="weapon-stat-value">Very close</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">7 shells</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Automatic shotgun that shreds rushes through tight chokes and smokes.
+          </div>
+        </div>
+      </article>
+
+      <!-- ========== RIFLES ========== -->
+
+      <!-- Bulldog -->
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="Rifle">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/public/assets/bucky.png" alt="Bulldog">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Bulldog</h2>
+              <p class="weapon-type">Rifle</p>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Bulldog</h3>
+              <span class="weapon-meta">2050 · Rifle</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge blue">Hybrid</span>
+              <span class="weapon-badge green">ADS Burst</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Fire</span>
+                <span class="weapon-stat-value">9.15 / 3‑burst</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Range</span>
+                <span class="weapon-stat-value">Mid</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">24 rounds</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Budget rifle that uses scoped burst fire to win mid‑range duels.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Guardian -->
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="Rifle">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/public/assets/guardian.png" alt="Guardian">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Guardian</h2>
+              <p class="weapon-type">Rifle</p>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Guardian</h3>
+              <span class="weapon-meta">2250 · Rifle</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge blue">Semi‑Auto</span>
+              <span class="weapon-badge green">Long Range</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Head</span>
+                <span class="weapon-stat-value">195 close</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Fire</span>
+                <span class="weapon-stat-value">6.5 r/s</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">12 rounds</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Precision rifle for players who rely on disciplined one‑tap aim.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Phantom -->
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="Rifle">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/public/assets/phantom.png" alt="Phantom">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Phantom</h2>
+              <p class="weapon-type">Rifle</p>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Phantom</h3>
+              <span class="weapon-meta">2900 · Rifle</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge blue">Silent</span>
+              <span class="weapon-badge green">Spray Control</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Head</span>
+                <span class="weapon-stat-value">156 close</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Falloff</span>
+                <span class="weapon-stat-value">After 15m</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">30 rounds</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Suppressed rifle built for sprays, bursts, and fighting through smokes at mid range.
+          </div>
+        </div>
+      </article>
+
+      <!-- Vandal -->
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="Rifle">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/public/assets/vandal.png" alt="Vandal">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Vandal</h2>
+              <p class="weapon-type">Rifle</p>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Vandal</h3>
+              <span class="weapon-meta">2900 · Rifle</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge red">All‑Range</span>
+              <span class="weapon-badge green">One‑Tap</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Head</span>
+                <span class="weapon-stat-value">160 all ranges</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Fire</span>
+                <span class="weapon-stat-value">9.75 r/s</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">25 rounds</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              High‑damage rifle whose headshot kills anywhere on the map, rewarding crisp bursts.
+          </div>
+        </div>
+      </article>
+
+      <!-- ========== SNIPERS (WITH OUTLAW) ========== -->
+
+      <!-- Marshal -->
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="Sniper">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/public/assets/marshal.png" alt="Marshal">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Marshal</h2>
+              <p class="weapon-type">Sniper</p>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Marshal</h3>
+              <span class="weapon-meta">950 · Sniper</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge blue">Eco</span>
+              <span class="weapon-badge green">Mobile</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Scope</span>
+                <span class="weapon-stat-value">Single zoom</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Head</span>
+                <span class="weapon-stat-value">202</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">5 rounds</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Lightweight sniper for eco rounds and aggressive peeks where mobility matters.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Outlaw -->
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="Sniper">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/public/assets/outlaw.png" alt="Outlaw">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Outlaw</h2>
+              <p class="weapon-type">Sniper</p>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Outlaw</h3>
+              <span class="weapon-meta">2400 · Sniper</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge red">Two‑Shot</span>
+              <span class="weapon-badge green">Mid Cost</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">2 rounds</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Head</span>
+                <span class="weapon-stat-value">High damage</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Role</span>
+                <span class="weapon-stat-value">Bridge Marshal / Op</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Mid‑price sniper with a two‑round magazine that sits between Marshal and Operator in power and commitment.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Operator -->
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="Sniper">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/public/assets/op.png" alt="Operator">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Operator</h2>
+              <p class="weapon-type">Sniper</p>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Operator</h3>
+              <span class="weapon-meta">4700 · Sniper</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge red">One‑Shot</span>
+              <span class="weapon-badge blue">Anchor</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Scope</span>
+                <span class="weapon-stat-value">Dual zoom</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Body</span>
+                <span class="weapon-stat-value">150 close</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">5 rounds</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Premier hard‑holding sniper that controls long sightlines with one‑shot picks.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- ========== HEAVIES ========== -->
+
+      <!-- Ares -->
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="Heavy">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/public/assets/ares.png" alt="Ares">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Ares</h2>
+              <p class="weapon-type">Heavy</p>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Ares</h3>
+              <span class="weapon-meta">1600 · Heavy</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge blue">Spam</span>
+              <span class="weapon-badge green">Value</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Fire</span>
+                <span class="weapon-stat-value">10–13 r/s</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">50 rounds</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Use</span>
+                <span class="weapon-stat-value">Wall spam</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Budget LMG that ramps up fire rate and excels at spamming through cover and utility.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Odin -->
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="Heavy">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/public/assets/odin.png" alt="Odin">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Odin</h2>
+              <p class="weapon-type">Heavy</p>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Odin</h3>
+              <span class="weapon-meta">3200 · Heavy</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge red">High DPS</span>
+              <span class="weapon-badge green">Post‑Plant</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Fire</span>
+                <span class="weapon-stat-value">12–15.6 r/s</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">100 rounds</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Role</span>
+                <span class="weapon-stat-value">Site lockdown</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Massive LMG for suppressive fire, site holds, and post‑plant spam through walls.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- ========== MELEE ========== -->
+
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="Melee">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/public/assets/knife.jpg" alt="Tactical Knife">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Tactical Knife</h2>
+              <p class="weapon-type">Melee</p>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Tactical Knife</h3>
+              <span class="weapon-meta">Free · Melee</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge green">Run Speed</span>
+              <span class="weapon-badge red">Backstab</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Back</span>
+                <span class="weapon-stat-value">One‑shot</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Front</span>
+                <span class="weapon-stat-value">2‑hit</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Bonus</span>
+                <span class="weapon-stat-value">Moves faster</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Always‑available melee that boosts movement speed and rewards bold backstab flanks.
+          </div>
+        </div>
+      </article>
+
+      <!-- ========== SHIELDS (3) ========== -->
+
+      <!-- Light Shields -->
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="Shields">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/public/assets/Screenshot 2025-12-16 221135.png" alt="Light Shields">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Light Shields</h2>
+              <p class="weapon-type">Shields</p>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Light Shields</h3>
+              <span class="weapon-meta">400 · Armor</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge blue">+25 Armor</span>
+              <span class="weapon-badge green">Pistol / Half</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">HP total</span>
+                <span class="weapon-stat-value">125</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Best for</span>
+                <span class="weapon-stat-value">Early rounds</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Risk</span>
+                <span class="weapon-stat-value">Cheaper</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Low‑cost armor that lets you survive extra bullets without sacrificing too many credits.
+          </div>
+        </div>
+      </article>
+
+      <!-- Heavy Shields -->
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="Shields">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/public/assets/heavy.png" alt="Heavy Shields">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Heavy Shields</h2>
+              <p class="weapon-type">Shields</p>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Heavy Shields</h3>
+              <span class="weapon-meta">1000 · Armor</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge blue">+50 Armor</span>
+              <span class="weapon-badge green">Full Buy</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">HP total</span>
+                <span class="weapon-stat-value">150</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Best for</span>
+                <span class="weapon-stat-value">Rifle rounds</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Risk</span>
+                <span class="weapon-stat-value">Costly</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Standard armor choice on rifle rounds when your team can afford full utility and guns.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Regen Shields (concept) -->
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="Shields">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+
+            <img src="/public/assets/regen.png" alt="Regen Shields">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Regen Shields</h2>
+              <p class="weapon-type">Concept</p>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Regen Shields</h3>
+              <span class="weapon-meta">650 · Armor</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge green">Regenerates</span>
+              <span class="weapon-badge red">Time‑Based</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Max bonus</span>
+                <span class="weapon-stat-value">+75 over time</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Best for</span>
+                <span class="weapon-stat-value">Long rounds</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Risk</span>
+                <span class="weapon-stat-value">Weak burst</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Custom concept armor for your site that slowly repairs between fights if you disengage.
+            </p>
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- Weapons script: filter + scroll reveal -->
+  <script src="weapons.js" defer></script>
+
+   <footer class="footer">
+    <div class="footer-left">
+      <p class="footer-brand">Valorant Hub</p>
+      <p>
+        This Agents page groups the roster by role and offers short style summaries to guide new
+        players. The information is intended for learning and practice and does not replace the
+        official game client.
+      </p>
+      <nav class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="/public/agents.html">Agents</a>
+        <a href="/public/weapons.html">Weapons</a>
+        <a href="weapons.html">Maps</a>
+        <a href="weapons.html">Esports</a>
+        <a href="weapons.html">About Us</a>
+
+      </nav>
+    </div>
+
+  <div class="social-icons">
+      <ul>
+        <li><a href="https://playvalorant.com/en-gb/"><span class="icon"><i class="fa-brands fa-github"></i></span></a></li>
+        <li><a href="https://www.instagram.com/oregaknows/"><span class="icon"><i class="fa-brands fa-x-twitter"></i></span></a></li>
+        <li><a href="https://www.instagram.com/jiw2ng/"><span class="icon"><i class="fa-brands fa-instagram"></i></span></a></li>
+      </ul>
+    </div>
+    </div>
+    <p class="copyright">
+      © 2025 @NathanOgerioYsaRosario2025. All rights reserved.
+    </p>
+  </div>
+  </footer>
+
+
+</body>
+</html>
