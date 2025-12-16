@@ -1,29 +1,108 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agents - Valorant Hub</title>
-    <meta name="description" content="Explore all Valorant agents, their abilities, roles, and strategies">
-    <meta name="keywords" content="Valorant agents, characters, abilities, duelist, controller">
-    <meta property="og:title" content="Agents - Valorant Hub">
-    <meta property="og:description" content="Complete guide to all Valorant agents and their abilities">
-    <meta name="twitter:title" content="Valorant Agents">
-    <meta name="twitter:description" content="Explore all Valorant agents">
-    
-    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
-    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23ff4655' d='M50 10L90 30v40L50 90 10 70V30z'/%3E%3C/svg%3E">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valorant Hub — Agents</title>
+
+  <link href="https://fonts.cdnfonts.com/css/valorant" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div id="root"></div>
-    <script type="text/babel" src="components/Header.js"></script>
-    <script type="text/babel" src="components/Footer.js"></script>
-    <script type="text/babel" src="components/AgentGrid.js"></script>
-    <script type="text/babel" src="agents-app.js"></script>
+  <header class="site-header">
+    <div class="logo">VALORANT HUB</div>
+
+    <nav class="main-nav">
+      <a href="home.html">Home</a>
+      <a href="agents.html" class="active">Agents</a>
+      <a href="weapons.html">Weapons</a>
+      <a href="maps.html">Maps</a>
+      <a href="esports.html">Esports</a>
+    </nav>
+
+    <button id="theme-toggle"
+            class="theme-toggle"
+            type="button"
+            aria-label="Toggle light and dark theme"
+            aria-pressed="true">
+      <span class="theme-icon">🌙</span>
+    </button>
+  </header>
+
+  <main class="agents-layout">
+    <!-- LEFT: AGENT GRID -->
+    <section class="agents-list">
+      <header class="section-header">
+        <p class="hero-kicker">Choose your role</p>
+        <h1 class="section-title">Agents Roster</h1>
+        <p class="section-desc">
+          Each agent brings a unique toolkit to the match. Browse the roster, flip a card,
+          and select an agent to view a quick style profile on the right panel.
+        </p>
+      </header>
+
+      <div class="agent-grid" id="agentGrid" aria-label="Valorant agent gallery"></div>
+    </section>
+
+    <!-- RIGHT: PREVIEW -->
+    <aside class="agent-preview-panel">
+      <p class="agent-role" id="role">SELECT AN AGENT</p>
+      <h2 class="agent-name" id="name">AGENTS</h2>
+      <p class="agent-desc" id="desc">
+        Hover over a card to see the agent’s role, then click to lock in a profile. The panel will
+        show a short description that explains how the agent supports a team during a round.
+      </p>
+
+      <div class="agent-preview-media">
+        <img id="previewImage" src="placeholder" alt="Selected agent artwork placeholder">
+        <p class="preview-caption" id="previewCaption">
+          Placeholder image slot for the selected agent’s key art or portrait.
+        </p>
+      </div>
+
+      <a href="#agentGrid" class="btn primary small-btn">Back to roster</a>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-left">
+      <p class="footer-brand">Valorant Hub</p>
+      <p>
+        This Agents page groups the roster by role and offers short style summaries to guide new
+        players. The information is intended for learning and practice and does not replace the
+        official game client.
+      </p>
+      <nav class="footer-links">
+        <a href="home.html">Home</a>
+        <a href="agents.html">Agents</a>
+        <a href="weapons.html">Weapons</a>
+      </nav>
+    </div>
+
+    <div class="social-icons">
+      <ul>
+        <li><a href="#"><i class="fab fa-facebook-f icon"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter icon"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitch icon"></i></a></li>
+        <li><a href="#"><i class="fab fa-youtube icon"></i></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="about">
+    <a class="bg_links social portfolio" href="#"></a>
+    <a class="bg_links social dribbble" href="#"></a>
+    <a class="bg_links social linkedin" href="#"></a>
+    <a class="bg_links logo"></a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" crossorigin="anonymous"></script>
+  <script src="home.js" defer></script>
+  <script src="agents.js" defer></script>
 </body>
 </html>
+

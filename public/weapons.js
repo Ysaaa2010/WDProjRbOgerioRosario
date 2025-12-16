@@ -1,57 +1,61 @@
-/**
- * Valorant Hub - Weapons Page Application Script  
- * Manages weapon filtering by category
- */
+// weapons.js
+// Category filtering, click-to-flip for weapons AND shields, plus scroll reveal.
 
-class ErrorBoundary extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { hasError: false, error: null };
+document.addEventListener('DOMContentLoaded', () => {
+  const tags = document.querySelectorAll('.weapon-tags .tag');
+  const cards = document.querySelectorAll('.weapon-card, .shield-card');
+
+  // ---------- CATEGORY FILTER ----------
+  function applyFilter(category) {
+    cards.forEach(card => {
+      const cat = card.getAttribute('data-category') || 'All';
+      card.style.display = (category === 'All' || cat === category) ? '' : 'none';
+    });
   }
 
-  static getDerivedStateFromError(error) {
-    return { hasError: true, error };
-  }
+  tags.forEach(tag => {
+    tag.addEventListener('click', () => {
+      tags.forEach(t => t.classList.remove('tag-all'));
+      tag.classList.add('tag-all');
+      applyFilter(tag.textContent.trim());
+    });
+  });
 
-  componentDidCatch(error, errorInfo) {
-    console.error('ErrorBoundary caught an error:', error, errorInfo.componentStack);
-  }
+  applyFilter('All');
 
-  render() {
-    if (this.state.hasError) {
-      return (
-        <div className="min-h-screen flex items-center justify-center">
-          <div className="text-center">
-            <h1 className="text-2xl font-bold mb-4">Something went wrong</h1>
-            <button onClick={() => window.location.reload()} className="px-6 py-2 bg-[var(--primary-color)] text-white rounded-lg">
-              Reload Page
-            </button>
-          </div>
-        </div>
-      );
-    }
-    return this.props.children;
-  }
-}
+  // ---------- CLICK TO FLIP ----------
+  const flipInners = document.querySelectorAll('.flip-card-inner');
 
-function WeaponsApp() {
-  try {
-    return (
-      <div className="min-h-screen" data-name="weapons-app" data-file="weapons-app.js">
-        <Header />
-        <WeaponList />
-        <Footer />
-      </div>
+  flipInners.forEach(inner => {
+    inner.addEventListener('click', () => {
+      const card = inner.closest('.flip-card');
+      if (card) {
+        card.classList.toggle('flipped');
+      }
+    });
+  });
+
+  // ---------- SCROLL REVEAL ----------
+  const revealItems = document.querySelectorAll('.reveal-on-scroll');
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
     );
-  } catch (error) {
-    console.error('WeaponsApp component error:', error);
-    return null;
+    revealItems.forEach(el => observer.observe(el));
+  } else {
+    revealItems.forEach(el => el.classList.add('is-visible'));
   }
-}
+});
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <ErrorBoundary>
-    <WeaponsApp />
-  </ErrorBoundary>
-);
+
+
+
