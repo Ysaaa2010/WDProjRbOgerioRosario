@@ -53,9 +53,17 @@ body {
 body {
   font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text-main);
-  background: radial-gradient(circle at top, var(--bg-main), var(--bg-alt));
   min-height: 100vh;
+
+  /* full-page background image with dark transparent overlay */
+  background-image:
+    linear-gradient(rgba(0,0,0,0.70), rgba(0,0,0,0.90)),
+    url("/public/assets/1249094.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
+
 
 a {
   color: inherit;
