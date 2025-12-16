@@ -1,9 +1,10 @@
 // weapons.js
 // Category filtering, click-to-flip for weapons AND shields, plus scroll reveal.
 
+
 document.addEventListener('DOMContentLoaded', () => {
   const tags = document.querySelectorAll('.weapon-tags .tag');
-  const cards = document.querySelectorAll('.weapon-card, .shield-card');
+  const cards = document.querySelectorAll('.weapon-card');
 
   // ---------- CATEGORY FILTER ----------
   function applyFilter(category) {
@@ -23,18 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   applyFilter('All');
 
-  // ---------- CLICK TO FLIP ----------
-  const flipInners = document.querySelectorAll('.flip-card-inner');
-
-  flipInners.forEach(inner => {
-    inner.addEventListener('click', () => {
-      const card = inner.closest('.flip-card');
-      if (card) {
-        card.classList.toggle('flipped');
-      }
-    });
-  });
-
   // ---------- SCROLL REVEAL ----------
   const revealItems = document.querySelectorAll('.reveal-on-scroll');
 
@@ -50,12 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       { threshold: 0.2 }
     );
+
     revealItems.forEach(el => observer.observe(el));
   } else {
     revealItems.forEach(el => el.classList.add('is-visible'));
   }
 });
-
-
-
-

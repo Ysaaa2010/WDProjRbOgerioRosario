@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valorant Hub — Home</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/public/assets/valorant.png" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.cdnfonts.com/css/valorant" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (icons for footer + theme, etc.) -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkTtP1qFjqGH2WUG5FSurhJ8WcXsW0XbjDLMqf0OnZR8X4z3pRo6+pc8w=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+
+  <!-- Global + page styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo">VALORANT HUB</div>
+
+    <nav class="main-nav">
+      <a href="main.html" class="active">Home</a>
+      <a href="agents.html">Agents</a>
+      <a href="weapons.html">Weapons</a>
+      <a href="maps.html">Maps</a>
+      <a href="esports.html">Esports</a>
+    </nav>
+
+    <button id="theme-toggle"
+            class="theme-toggle"
+            type="button"
+            aria-label="Toggle light and dark theme"
+            aria-pressed="true">
+      <span class="theme-icon">🌙</span>
+      <span class="theme-label">Dark</span>
+    </button>
+  </header>
+
+  <!-- HERO SECTION -->
+  <main class="home-main">
+    <section class="hero">
+      <div class="hero-left">
+        <p class="hero-kicker">Fan‑made Valorant guide</p>
+        <h1 class="hero-title">
+          Plan your<br>
+          next clutch.
+        </h1>
+        <p class="hero-subtitle">
+          Explore agents, weapons, maps, and esports to understand how each piece fits into a round of tactical 5v5 Valorant.
+        </p>
+
+        <div class="hero-actions">
+          <a href="agents.html" class="btn primary">
+            Explore Agents
+          </a>
+          <a href="weapons.html" class="btn ghost">
+            See Weapons
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <span class="hero-pill">Agents</span>
+          <span class="hero-pill">Weapons</span>
+          <span class="hero-pill">Maps</span>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card hero-card-main">
+          <img src="/public/assets/wo.jpg" alt="Valorant agents artwork">
+          <div class="hero-card-overlay">
+            <p class="hero-card-label">Your agents</p>
+            <h2>Creativity is your greatest weapon.</h2>
+            <p class="hero-card-text">
+              Pick duelists, controllers, initiators, and sentinels that match your team’s playstyle and game plan.
+            </p>
+          </div>
+        </div>
+
+        <div class="hero-card-row">
+          <div class="hero-mini-card">
+            <div class="mini-card-header">
+              <span class="mini-tag mini-tag-green">Loadout</span>
+              <span class="mini-price">Full buy</span>
+            </div>
+            <p class="mini-title">Phantom + Heavy</p>
+            <p class="mini-body">
+              Reliable spray rifle and armor for mid‑range fights on most maps.
+            </p>
+          </div>
+
+          <div class="hero-mini-card">
+            <div class="mini-card-header">
+              <span class="mini-tag mini-tag-red">Eco</span>
+              <span class="mini-price">Save</span>
+            </div>
+            <p class="mini-title">Sheriff rounds</p>
+            <p class="mini-body">
+              High‑impact pistol buys that still threaten rifles at all ranges.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK SECTIONS -->
+    <section class="home-grid">
+      <!-- Agents -->
+      <article class="home-tile tile-agents reveal-on-scroll">
+        <div class="tile-header">
+          <h2>Agents</h2>
+          <p>Learn each role and ability so you know how to take space, control sites, and support your team.</p>
+        </div>
+        <ul class="tile-list">
+          <li><span>Duelists</span><span>Entry fraggers</span></li>
+          <li><span>Controllers</span><span>Smokes & space</span></li>
+          <li><span>Initiators</span><span>Info & setups</span></li>
+          <li><span>Sentinels</span><span>Locks & flanks</span></li>
+        </ul>
+        <a href="agents.html" class="tile-link">Go to Agents</a>
+      </article>
+
+      <!-- Weapons -->
+      <article class="home-tile tile-weapons reveal-on-scroll">
+        <div class="tile-header">
+          <h2>Weapons</h2>
+          <p>Sidearms to operators, understand damage, ranges, and when to buy each gun.</p>
+        </div>
+        <ul class="tile-list">
+          <li><span>Sidearms</span><span>Pistol rounds</span></li>
+          <li><span>Rifles</span><span>Core buys</span></li>
+          <li><span>Snipers</span><span>Anchor plays</span></li>
+          <li><span>Shields</span><span>Survivability</span></li>
+        </ul>
+        <a href="weapons.html" class="tile-link">Go to Weapons</a>
+      </article>
+
+      <!-- Maps -->
+      <article class="home-tile tile-maps reveal-on-scroll">
+        <div class="tile-header">
+          <h2>Maps</h2>
+          <p>Each map has unique lanes, sites, and gimmicks that change how you attack and defend.</p>
+        </div>
+        <ul class="tile-list">
+          <li><span>Ascent</span><span>Mid control</span></li>
+          <li><span>Bind</span><span>Teleporters</span></li>
+          <li><span>Icebox</span><span>Vertical fights</span></li>
+          <li><span>More</span><span>Rotations & sites</span></li>
+        </ul>
+        <a href="maps.html" class="tile-link">Go to Maps</a>
+      </article>
+
+      <!-- Esports -->
+      <article class="home-tile tile-esports reveal-on-scroll">
+        <div class="tile-header">
+          <h2>Esports</h2>
+          <p>Follow pro matches to see how teams use agents, utility, and economy at the highest level.</p>
+        </div>
+        <ul class="tile-list">
+          <li><span>Meta comps</span><span>Pro picks</span></li>
+          <li><span>Set plays</span><span>Execs & retakes</span></li>
+          <li><span>Economy</span><span>Save vs force</span></li>
+          <li><span>Events</span><span>International</span></li>
+        </ul>
+        <a href="esports.html" class="tile-link">Go to Esports</a>
+      </article>
+    </section>
+  </main>
+
+  <!-- Shared footer -->
+  <footer class="footer">
+    <div class="footer-left">
+      <div class="footer-brand">VALORANT HUB</div>
+      <p>
+        Fan‑made Valorant guide for agents, weapons, maps, and esports. Not affiliated with Riot Games.
+      </p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="agents.html">Agents</a>
+        <a href="weapons.html">Weapons</a>
+        <a href="maps.html">Maps</a>
+        <a href="esports.html">Esports</a>
+      </div>
+    </div>
+
+    <div class="social-icons">
+      <ul>
+        <li><a href="https://playvalorant.com/en-gb/"><span class="icon"><i class="fa-brands fa-github"></i></span></a></li>
+        <li><a href="https://www.instagram.com/oregaknows/"><span class="icon"><i class="fa-brands fa-x-twitter"></i></span></a></li>
+        <li><a href="https://www.instagram.com/jiw2ng/"><span class="icon"><i class="fa-brands fa-instagram"></i></span></a></li>
+      </ul>
+    </div>
+
+    </div>
+    <p class="copyright">
+      © 2025 @NathanOgerioYsaRosario2025. All rights reserved.
+    </p>
+  </div>
+  </footer>
+
+  <script src="home.js" defer></script>
+   <script src="theme.js" defer></script>
+</body>
+</html>

@@ -8,18 +8,26 @@
   <link href="https://fonts.cdnfonts.com/css/valorant" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- main site styles -->
   <link rel="stylesheet" href="styles.css" />
+  <!-- weapons‑specific styles (with flip card + layout) -->
+  <link rel="stylesheet" href="weapons.css" />
+<link rel="icon" type="image/png" href="/public/assets/valorant.png" />
+<script src="theme.js" defer></script>
+
 </head>
 <body>
+  <!-- HEADER -->
   <header class="site-header">
     <div class="logo">VALORANT HUB</div>
 
     <nav class="main-nav">
-      <a href="main.html">Home</a>
+      <a href="index.html">Home</a>
       <a href="agents.html">Agents</a>
       <a href="weapons.html" class="active">Weapons</a>
       <a href="maps.html">Maps</a>
       <a href="esports.html">Esports</a>
+       <a href="esports.html">About Us</a>
     </nav>
 
     <button id="theme-toggle"
@@ -28,16 +36,18 @@
             aria-label="Toggle light and dark theme"
             aria-pressed="true">
       <span class="theme-icon">🌙</span>
+      <span class="theme-label">Theme</span>
     </button>
   </header>
 
   <main class="weapons-page">
+    <!-- HERO -->
     <section class="weapons-hero">
       <div>
         <p class="hero-kicker">Plan your buy round</p>
         <h1 class="section-title">Weapon Arsenal</h1>
         <p class="section-desc">
-          Valorant’s arsenal is grouped by sidearms, SMGs, shotguns, rifles, snipers, heavies, and shields so players can quickly review roles, prices, and simple damage notes.[web:63][web:70]
+          Valorant’s arsenal spans pistols, SMGs, shotguns, rifles, snipers, heavies, melee and armor, so each round’s buy can match your team’s game plan.
         </p>
       </div>
       <div class="weapon-tags">
@@ -48,36 +58,52 @@
         <span class="tag">Rifle</span>
         <span class="tag">Sniper</span>
         <span class="tag">Heavy</span>
+        <span class="tag">Melee</span>
         <span class="tag">Shields</span>
       </div>
     </section>
 
+    <!-- WEAPONS GRID -->
     <section class="weapons-grid">
-      <!-- SIDEARMS -->
+
+      <!-- ========== SIDEARMS ========== -->
+
       <!-- Classic -->
       <article class="weapon-card flip-card reveal-on-scroll" data-category="Sidearm">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="./assets/bclassic.jpg" alt="Classic weapon">
+            <img src="/public/assets/classic.jpg" alt="Classic">
             <div class="weapon-front-label">
               <h2 class="weapon-name">Classic</h2>
               <p class="weapon-type">Sidearm</p>
             </div>
           </div>
           <div class="flip-card-back">
-            <header class="weapon-header">
-              <h2 class="weapon-name">Classic</h2>
-              <p class="weapon-type">Sidearm · 0 credits</p>
-            </header>
-            <div class="weapon-stats-row">
-              <div><span class="stat-label">Role</span><span class="stat-value blue">Default pistol</span></div>
-              <div><span class="stat-label">Damage</span><span class="stat-value red">Head‑78 close</span></div>
-              <div><span class="stat-label">Fire</span><span class="stat-value green">6.75</span></div>
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Classic</h3>
+              <span class="weapon-meta">0 · Sidearm</span>
             </div>
-            <p class="weapon-note">Free sidearm with a close‑range burst fire mode.[web:63]</p>
-            <button class="btn-outline-valorant" type="button">
-              <span class="label"><span class="hover-effect"></span><span class="label-text">Pistol rounds</span></span>
-            </button>
+            <div class="weapon-badges">
+              <span class="weapon-badge blue">Default</span>
+              <span class="weapon-badge green">Burst Alt</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Head</span>
+                <span class="weapon-stat-value">78 close</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Body</span>
+                <span class="weapon-stat-value">26 close</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Fire rate</span>
+                <span class="weapon-stat-value">6.75 r/s</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Free spawn pistol with accurate taps and a close‑range three‑round burst alt fire.
+            </p>
           </div>
         </div>
       </article>
@@ -86,26 +112,38 @@
       <article class="weapon-card flip-card reveal-on-scroll" data-category="Sidearm">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="shorty.png" alt="Shorty weapon">
+            <img src="/public/assets/shorty.png" alt="Shorty">
             <div class="weapon-front-label">
               <h2 class="weapon-name">Shorty</h2>
               <p class="weapon-type">Sidearm</p>
             </div>
           </div>
           <div class="flip-card-back">
-            <header class="weapon-header">
-              <h2 class="weapon-name">Shorty</h2>
-              <p class="weapon-type">Sidearm · 150 credits</p>
-            </header>
-            <div class="weapon-stats-row">
-              <div><span class="stat-label">Role</span><span class="stat-value blue">Pocket shotgun</span></div>
-              <div><span class="stat-label">Damage</span><span class="stat-value red">High close pellets</span></div>
-              <div><span class="stat-label">Fire</span><span class="stat-value green">3.3</span></div>
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Shorty</h3>
+              <span class="weapon-meta">150 · Sidearm</span>
             </div>
-            <p class="weapon-note">Extremely strong at very short range around corners.[web:63]</p>
-            <button class="btn-outline-valorant" type="button">
-              <span class="label"><span class="hover-effect"></span><span class="label-text">Cheeky plays</span></span>
-            </button>
+            <div class="weapon-badges">
+              <span class="weapon-badge red">Shotgun</span>
+              <span class="weapon-badge green">Close Corners</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Pellets</span>
+                <span class="weapon-stat-value">12 / shot</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Range</span>
+                <span class="weapon-stat-value">Very close</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">2 rounds</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Tiny pocket shotgun that deletes enemies if they walk into your crosshair at point‑blank range.
+            </p>
           </div>
         </div>
       </article>
@@ -114,26 +152,38 @@
       <article class="weapon-card flip-card reveal-on-scroll" data-category="Sidearm">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="frenzy.png" alt="Frenzy weapon">
+            <img src="/public/assets/frenzy.png" alt="Frenzy">
             <div class="weapon-front-label">
               <h2 class="weapon-name">Frenzy</h2>
               <p class="weapon-type">Sidearm</p>
             </div>
           </div>
           <div class="flip-card-back">
-            <header class="weapon-header">
-              <h2 class="weapon-name">Frenzy</h2>
-              <p class="weapon-type">Sidearm · 450 credits</p>
-            </header>
-            <div class="weapon-stats-row">
-              <div><span class="stat-label">Role</span><span class="stat-value blue">Auto pistol</span></div>
-              <div><span class="stat-label">Damage</span><span class="stat-value red">Low per bullet</span></div>
-              <div><span class="stat-label">Fire</span><span class="stat-value green">10</span></div>
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Frenzy</h3>
+              <span class="weapon-meta">450 · Sidearm</span>
             </div>
-            <p class="weapon-note">Great when sprinting into tight sites and trading.[web:63]</p>
-            <button class="btn-outline-valorant" type="button">
-              <span class="label"><span class="hover-effect"></span><span class="label-text">Rush buys</span></span>
-            </button>
+            <div class="weapon-badges">
+              <span class="weapon-badge green">Auto</span>
+              <span class="weapon-badge red">Close Range</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Head</span>
+                <span class="weapon-stat-value">78 close</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Fire rate</span>
+                <span class="weapon-stat-value">13.3 r/s</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">13 rounds</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Fully automatic pistol that thrives in chaotic close‑quarters fights and pistol‑round rushes.
+            </p>
           </div>
         </div>
       </article>
@@ -142,26 +192,38 @@
       <article class="weapon-card flip-card reveal-on-scroll" data-category="Sidearm">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="ghost.png" alt="Ghost weapon">
+            <img src="/public/assets/ghost.png" alt="Ghost">
             <div class="weapon-front-label">
               <h2 class="weapon-name">Ghost</h2>
               <p class="weapon-type">Sidearm</p>
             </div>
           </div>
           <div class="flip-card-back">
-            <header class="weapon-header">
-              <h2 class="weapon-name">Ghost</h2>
-              <p class="weapon-type">Sidearm · 500 credits</p>
-            </header>
-            <div class="weapon-stats-row">
-              <div><span class="stat-label">Role</span><span class="stat-value blue">Silenced pistol</span></div>
-              <div><span class="stat-label">Damage</span><span class="stat-value red">Head‑105 close</span></div>
-              <div><span class="stat-label">Fire</span><span class="stat-value green">6.75</span></div>
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Ghost</h3>
+              <span class="weapon-meta">500 · Sidearm</span>
             </div>
-            <p class="weapon-note">Strong pistol round buy for precise tap shots.[web:63][web:66]</p>
-            <button class="btn-outline-valorant" type="button">
-              <span class="label"><span class="hover-effect"></span><span class="label-text">Pistol buy</span></span>
-            </button>
+            <div class="weapon-badges">
+              <span class="weapon-badge blue">Silent</span>
+              <span class="weapon-badge green">Pistol Round</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Head</span>
+                <span class="weapon-stat-value">105 close</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Body</span>
+                <span class="weapon-stat-value">30 close</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">15 rounds</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Silenced, accurate pistol favored on pistol rounds for long‑range head taps.
+            </p>
           </div>
         </div>
       </article>
@@ -170,486 +232,770 @@
       <article class="weapon-card flip-card reveal-on-scroll" data-category="Sidearm">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="sheriff.png" alt="Sheriff weapon">
+            <img src="/public/assets/sheriff.png" alt="Sheriff">
             <div class="weapon-front-label">
               <h2 class="weapon-name">Sheriff</h2>
               <p class="weapon-type">Sidearm</p>
             </div>
           </div>
           <div class="flip-card-back">
-            <header class="weapon-header">
-              <h2 class="weapon-name">Sheriff</h2>
-              <p class="weapon-type">Sidearm · 800 credits</p>
-            </header>
-            <div class="weapon-stats-row">
-              <div><span class="stat-label">Role</span><span class="stat-value blue">Hand cannon</span></div>
-              <div><span class="stat-label">Damage</span><span class="stat-value red">Very high headshot</span></div>
-              <div><span class="stat-label">Fire</span><span class="stat-value green">4</span></div>
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Sheriff</h3>
+              <span class="weapon-meta">800 · Sidearm</span>
             </div>
-            <p class="weapon-note">Eco monster that rewards crisp aim and peeks.[web:63][web:85]</p>
-            <button class="btn-outline-valorant" type="button">
-              <span class="label"><span class="hover-effect"></span><span class="label-text">Force rounds</span></span>
-            </button>
+            <div class="weapon-badges">
+              <span class="weapon-badge red">One‑Tap</span>
+              <span class="weapon-badge blue">Eco Buy</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Head</span>
+                <span class="weapon-stat-value">159 close</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Range</span>
+                <span class="weapon-stat-value">All ranges</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">6 rounds</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              High‑risk, high‑reward hand cannon that can one‑tap rifles on eco rounds.
+            </p>
           </div>
         </div>
       </article>
 
-      <!-- SMGS -->
+      <!-- ========== SMGS ========== -->
+
+      <!-- Stinger -->
       <article class="weapon-card flip-card reveal-on-scroll" data-category="SMG">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="stinger.png" alt="Stinger weapon">
+            <img src="/public/assets/stinger.png" alt="Stinger">
             <div class="weapon-front-label">
               <h2 class="weapon-name">Stinger</h2>
               <p class="weapon-type">SMG</p>
             </div>
           </div>
           <div class="flip-card-back">
-            <header class="weapon-header">
-              <h2 class="weapon-name">Stinger</h2>
-              <p class="weapon-type">SMG · 950 credits</p>
-            </header>
-            <div class="weapon-stats-row">
-              <div><span class="stat-label">Role</span><span class="stat-value blue">Budget spray</span></div>
-              <div><span class="stat-label">Damage</span><span class="stat-value red">Low per shot</span></div>
-              <div><span class="stat-label">Fire</span><span class="stat-value green">16</span></div>
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Stinger</h3>
+              <span class="weapon-meta">950 · SMG</span>
             </div>
-            <p class="weapon-note">Excels at very quick bursts on close angles.[web:63]</p>
-            <button class="btn-outline-valorant" type="button">
-              <span class="label"><span class="hover-effect"></span><span class="label-text">Bonus rounds</span></span>
-            </button>
+            <div class="weapon-badges">
+              <span class="weapon-badge green">Bonus</span>
+              <span class="weapon-badge red">Spray</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Fire rate</span>
+                <span class="weapon-stat-value">16 r/s</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Range</span>
+                <span class="weapon-stat-value">Very close</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">20 rounds</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Budget SMG that overwhelms enemies at close range on bonus or force‑buy rounds.
+            </p>
           </div>
         </div>
       </article>
 
+      <!-- Spectre -->
       <article class="weapon-card flip-card reveal-on-scroll" data-category="SMG">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="spectre.png" alt="Spectre weapon">
+            <img src="/public/assets/specter.png" alt="Spectre">
             <div class="weapon-front-label">
               <h2 class="weapon-name">Spectre</h2>
               <p class="weapon-type">SMG</p>
             </div>
           </div>
           <div class="flip-card-back">
-            <header class="weapon-header">
-              <h2 class="weapon-name">Spectre</h2>
-              <p class="weapon-type">SMG · 1600 credits</p>
-            </header>
-            <div class="weapon-stats-row">
-              <div><span class="stat-label">Role</span><span class="stat-value blue">Silent spray</span></div>
-              <div><span class="stat-label">Damage</span><span class="stat-value red">Head‑78 / Body‑26</span></div>
-              <div><span class="stat-label">Fire</span><span class="stat-value green">13.33</span></div>
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Spectre</h3>
+              <span class="weapon-meta">1600 · SMG</span>
             </div>
-            <p class="weapon-note">Versatile SMG with suppressor and easy recoil.[web:63][web:88]</p>
-            <button class="btn-outline-valorant" type="button">
-              <span class="label"><span class="hover-effect"></span><span class="label-text">Run‑and‑gun</span></span>
-            </button>
+            <div class="weapon-badges">
+              <span class="weapon-badge blue">Silent</span>
+              <span class="weapon-badge green">Run‑and‑Gun</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Fire rate</span>
+                <span class="weapon-stat-value">13.3 r/s</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Range</span>
+                <span class="weapon-stat-value">Close–mid</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">30 rounds</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Versatile SMG for tight maps, excelling in bonus rounds and anti‑ecos.
+            </p>
           </div>
         </div>
       </article>
 
-      <!-- SHOTGUNS -->
+      <!-- ========== SHOTGUNS ========== -->
+
+      <!-- Bucky -->
       <article class="weapon-card flip-card reveal-on-scroll" data-category="Shotgun">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="bucky.png" alt="Bucky weapon">
+            <img src="/public/assets/bucky.png" alt="Bucky">
             <div class="weapon-front-label">
               <h2 class="weapon-name">Bucky</h2>
               <p class="weapon-type">Shotgun</p>
             </div>
           </div>
           <div class="flip-card-back">
-            <header class="weapon-header">
-              <h2 class="weapon-name">Bucky</h2>
-              <p class="weapon-type">Shotgun · 850 credits</p>
-            </header>
-            <div class="weapon-stats-row">
-              <div><span class="stat-label">Role</span><span class="stat-value blue">Utility shotgun</span></div>
-              <div><span class="stat-label">Damage</span><span class="stat-value red">Pellets + alt fire</span></div>
-              <div><span class="stat-label">Fire</span><span class="stat-value green">1.1</span></div>
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Bucky</h3>
+              <span class="weapon-meta">850 · Shotgun</span>
             </div>
-            <p class="weapon-note">Combines close‑range shots with mid‑range alt‑fire.[web:63]</p>
-            <button class="btn-outline-valorant" type="button">
-              <span class="label"><span class="hover-effect"></span><span class="label-text">Off‑angles</span></span>
-            </button>
+            <div class="weapon-badges">
+              <span class="weapon-badge red">Pellets</span>
+              <span class="weapon-badge green">Alt Range</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mode</span>
+                <span class="weapon-stat-value">Primary / Alt</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Range</span>
+                <span class="weapon-stat-value">Close–mid</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">5 shells</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Utility shotgun with a powerful close blast and alt‑fire for mid‑range pop shots.
+            </p>
           </div>
         </div>
       </article>
 
+      <!-- Judge -->
       <article class="weapon-card flip-card reveal-on-scroll" data-category="Shotgun">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="judge.png" alt="Judge weapon">
+            <img src="/public/assets/judge.png" alt="Judge">
             <div class="weapon-front-label">
               <h2 class="weapon-name">Judge</h2>
               <p class="weapon-type">Shotgun</p>
             </div>
           </div>
           <div class="flip-card-back">
-            <header class="weapon-header">
-              <h2 class="weapon-name">Judge</h2>
-              <p class="weapon-type">Shotgun · 1850 credits</p>
-            </header>
-            <div class="weapon-stats-row">
-              <div><span class="stat-label">Role</span><span class="stat-value blue">Auto shotgun</span></div>
-              <div><span class="stat-label">Damage</span><span class="stat-value red">High pellet DPS</span></div>
-              <div><span class="stat-label">Fire</span><span class="stat-value green">3.5</span></div>
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Judge</h3>
+              <span class="weapon-meta">1850 · Shotgun</span>
             </div>
-            <p class="weapon-note">Destroys rushes through tight chokes and smokes.[web:63][web:85]</p>
-            <button class="btn-outline-valorant" type="button">
-              <span class="label"><span class="hover-effect"></span><span class="label-text">Hold sites</span></span>
-            </button>
+            <div class="weapon-badges">
+              <span class="weapon-badge red">Auto</span>
+              <span class="weapon-badge green">Smokes</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Fire rate</span>
+                <span class="weapon-stat-value">3.5 r/s</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Range</span>
+                <span class="weapon-stat-value">Very close</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">7 shells</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Automatic shotgun that shreds rushes through tight chokes and smokes.
           </div>
         </div>
       </article>
 
-      <!-- RIFLES -->
+      <!-- ========== RIFLES ========== -->
+
+      <!-- Bulldog -->
       <article class="weapon-card flip-card reveal-on-scroll" data-category="Rifle">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="bulldog.png" alt="Bulldog weapon">
+            <img src="/public/assets/bucky.png" alt="Bulldog">
             <div class="weapon-front-label">
               <h2 class="weapon-name">Bulldog</h2>
               <p class="weapon-type">Rifle</p>
             </div>
           </div>
           <div class="flip-card-back">
-            <header class="weapon-header">
-              <h2 class="weapon-name">Bulldog</h2>
-              <p class="weapon-type">Rifle · 2050 credits</p>
-            </header>
-            <div class="weapon-stats-row">
-              <div><span class="stat-label">Role</span><span class="stat-value blue">Hybrid rifle</span></div>
-              <div><span class="stat-label">Damage</span><span class="stat-value red">Tap or burst</span></div>
-              <div><span class="stat-label">Fire</span><span class="stat-value green">9.15</span></div>
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Bulldog</h3>
+              <span class="weapon-meta">2050 · Rifle</span>
             </div>
-            <p class="weapon-note">Scoped burst fire for mid‑range control on a budget.[web:87]</p>
-            <button class="btn-outline-valorant" type="button">
-              <span class="label"><span class="hover-effect"></span><span class="label-text">Bonus / save</span></span>
-            </button>
+            <div class="weapon-badges">
+              <span class="weapon-badge blue">Hybrid</span>
+              <span class="weapon-badge green">ADS Burst</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Fire</span>
+                <span class="weapon-stat-value">9.15 / 3‑burst</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Range</span>
+                <span class="weapon-stat-value">Mid</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">24 rounds</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Budget rifle that uses scoped burst fire to win mid‑range duels.
+            </p>
           </div>
         </div>
       </article>
 
+      <!-- Guardian -->
       <article class="weapon-card flip-card reveal-on-scroll" data-category="Rifle">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="guardian.png" alt="Guardian weapon">
+            <img src="/public/assets/guardian.png" alt="Guardian">
             <div class="weapon-front-label">
               <h2 class="weapon-name">Guardian</h2>
               <p class="weapon-type">Rifle</p>
             </div>
           </div>
           <div class="flip-card-back">
-            <header class="weapon-header">
-              <h2 class="weapon-name">Guardian</h2>
-              <p class="weapon-type">Rifle · 2250 credits</p>
-            </header>
-            <div class="weapon-stats-row">
-              <div><span class="stat-label">Role</span><span class="stat-value blue">Semi‑auto</span></div>
-              <div><span class="stat-label">Damage</span><span class="stat-value red">High one‑tap</span></div>
-              <div><span class="stat-label">Fire</span><span class="stat-value green">5.25</span></div>
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Guardian</h3>
+              <span class="weapon-meta">2250 · Rifle</span>
             </div>
-            <p class="weapon-note">Tap‑firing rifle for long‑range sightlines.[web:87][web:85]</p>
-            <button class="btn-outline-valorant" type="button">
-              <span class="label"><span class="hover-effect"></span><span class="label-text">Anchor angles</span></span>
-            </button>
+            <div class="weapon-badges">
+              <span class="weapon-badge blue">Semi‑Auto</span>
+              <span class="weapon-badge green">Long Range</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Head</span>
+                <span class="weapon-stat-value">195 close</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Fire</span>
+                <span class="weapon-stat-value">6.5 r/s</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">12 rounds</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Precision rifle for players who rely on disciplined one‑tap aim.
+            </p>
           </div>
         </div>
       </article>
 
+      <!-- Phantom -->
       <article class="weapon-card flip-card reveal-on-scroll" data-category="Rifle">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="phantom.png" alt="Phantom weapon">
+            <img src="/public/assets/phantom.png" alt="Phantom">
             <div class="weapon-front-label">
               <h2 class="weapon-name">Phantom</h2>
               <p class="weapon-type">Rifle</p>
             </div>
           </div>
           <div class="flip-card-back">
-            <header class="weapon-header">
-              <h2 class="weapon-name">Phantom</h2>
-              <p class="weapon-type">Rifle · 2900 credits</p>
-            </header>
-            <div class="weapon-stats-row">
-              <div><span class="stat-label">Role</span><span class="stat-value blue">Spray rifle</span></div>
-              <div><span class="stat-label">Damage</span><span class="stat-value red">Falls off at range</span></div>
-              <div><span class="stat-label">Fire</span><span class="stat-value green">11</span></div>
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Phantom</h3>
+              <span class="weapon-meta">2900 · Rifle</span>
             </div>
-            <p class="weapon-note">Silenced rifle that excels in close‑to‑mid fights.[web:63][web:88]</p>
-            <button class="btn-outline-valorant" type="button">
-              <span class="label"><span class="hover-effect"></span><span class="label-text">Close / mid</span></span>
-            </button>
+            <div class="weapon-badges">
+              <span class="weapon-badge blue">Silent</span>
+              <span class="weapon-badge green">Spray Control</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Head</span>
+                <span class="weapon-stat-value">156 close</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Falloff</span>
+                <span class="weapon-stat-value">After 15m</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">30 rounds</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Suppressed rifle built for sprays, bursts, and fighting through smokes at mid range.
           </div>
         </div>
       </article>
 
+      <!-- Vandal -->
       <article class="weapon-card flip-card reveal-on-scroll" data-category="Rifle">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="vandal.png" alt="Vandal weapon">
+            <img src="/public/assets/vandal.png" alt="Vandal">
             <div class="weapon-front-label">
               <h2 class="weapon-name">Vandal</h2>
               <p class="weapon-type">Rifle</p>
             </div>
           </div>
           <div class="flip-card-back">
-            <header class="weapon-header">
-              <h2 class="weapon-name">Vandal</h2>
-              <p class="weapon-type">Rifle · 2900 credits</p>
-            </header>
-            <div class="weapon-stats-row">
-              <div><span class="stat-label">Role</span><span class="stat-value blue">All‑range</span></div>
-              <div><span class="stat-label">Damage</span><span class="stat-value red">Head‑160 any range</span></div>
-              <div><span class="stat-label">Fire</span><span class="stat-value green">9.75</span></div>
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Vandal</h3>
+              <span class="weapon-meta">2900 · Rifle</span>
             </div>
-            <p class="weapon-note">Favored for consistent damage at every distance.[web:63][web:85]</p>
-            <button class="btn-outline-valorant" type="button">
-              <span class="label"><span class="hover-effect"></span><span class="label-text">Default rifle</span></span>
-            </button>
+            <div class="weapon-badges">
+              <span class="weapon-badge red">All‑Range</span>
+              <span class="weapon-badge green">One‑Tap</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Head</span>
+                <span class="weapon-stat-value">160 all ranges</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Fire</span>
+                <span class="weapon-stat-value">9.75 r/s</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">25 rounds</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              High‑damage rifle whose headshot kills anywhere on the map, rewarding crisp bursts.
           </div>
         </div>
       </article>
 
-      <!-- SNIPERS -->
+      <!-- ========== SNIPERS (WITH OUTLAW) ========== -->
+
+      <!-- Marshal -->
       <article class="weapon-card flip-card reveal-on-scroll" data-category="Sniper">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="marshal.png" alt="Marshal weapon">
+            <img src="/public/assets/marshal.png" alt="Marshal">
             <div class="weapon-front-label">
               <h2 class="weapon-name">Marshal</h2>
               <p class="weapon-type">Sniper</p>
             </div>
           </div>
           <div class="flip-card-back">
-            <header class="weapon-header">
-              <h2 class="weapon-name">Marshal</h2>
-              <p class="weapon-type">Sniper · 950 credits</p>
-            </header>
-            <div class="weapon-stats-row">
-              <div><span class="stat-label">Role</span><span class="stat-value blue">Budget sniper</span></div>
-              <div><span class="stat-label">Damage</span><span class="stat-value red">Head‑202 / Body‑101</span></div>
-              <div><span class="stat-label">Fire</span><span class="stat-value green">1.5</span></div>
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Marshal</h3>
+              <span class="weapon-meta">950 · Sniper</span>
             </div>
-            <p class="weapon-note">Great for eco sniping and quick flicks.[web:63][web:87]</p>
-            <button class="btn-outline-valorant" type="button">
-              <span class="label"><span class="hover-effect"></span><span class="label-text">Eco op</span></span>
-            </button>
+            <div class="weapon-badges">
+              <span class="weapon-badge blue">Eco</span>
+              <span class="weapon-badge green">Mobile</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Scope</span>
+                <span class="weapon-stat-value">Single zoom</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Head</span>
+                <span class="weapon-stat-value">202</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">5 rounds</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Lightweight sniper for eco rounds and aggressive peeks where mobility matters.
+            </p>
           </div>
         </div>
       </article>
 
+      <!-- Outlaw -->
       <article class="weapon-card flip-card reveal-on-scroll" data-category="Sniper">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="operator.png" alt="Operator weapon">
+            <img src="/public/assets/outlaw.png" alt="Outlaw">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Outlaw</h2>
+              <p class="weapon-type">Sniper</p>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Outlaw</h3>
+              <span class="weapon-meta">2400 · Sniper</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge red">Two‑Shot</span>
+              <span class="weapon-badge green">Mid Cost</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">2 rounds</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Head</span>
+                <span class="weapon-stat-value">High damage</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Role</span>
+                <span class="weapon-stat-value">Bridge Marshal / Op</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Mid‑price sniper with a two‑round magazine that sits between Marshal and Operator in power and commitment.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Operator -->
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="Sniper">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/public/assets/op.png" alt="Operator">
             <div class="weapon-front-label">
               <h2 class="weapon-name">Operator</h2>
               <p class="weapon-type">Sniper</p>
             </div>
           </div>
           <div class="flip-card-back">
-            <header class="weapon-header">
-              <h2 class="weapon-name">Operator</h2>
-              <p class="weapon-type">Sniper · 4700 credits</p>
-            </header>
-            <div class="weapon-stats-row">
-              <div><span class="stat-label">Role</span><span class="stat-value blue">Heavy sniper</span></div>
-              <div><span class="stat-label">Damage</span><span class="stat-value red">Head‑255 / Body‑150</span></div>
-              <div><span class="stat-label">Fire</span><span class="stat-value green">0.75</span></div>
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Operator</h3>
+              <span class="weapon-meta">4700 · Sniper</span>
             </div>
-            <p class="weapon-note">Controls long lanes with one powerful shot.[web:63][web:85]</p>
-            <button class="btn-outline-valorant" type="button">
-              <span class="label"><span class="hover-effect"></span><span class="label-text">Anchor lanes</span></span>
-            </button>
+            <div class="weapon-badges">
+              <span class="weapon-badge red">One‑Shot</span>
+              <span class="weapon-badge blue">Anchor</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Scope</span>
+                <span class="weapon-stat-value">Dual zoom</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Body</span>
+                <span class="weapon-stat-value">150 close</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">5 rounds</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Premier hard‑holding sniper that controls long sightlines with one‑shot picks.
+            </p>
           </div>
         </div>
       </article>
 
-      <!-- HEAVIES -->
+      <!-- ========== HEAVIES ========== -->
+
+      <!-- Ares -->
       <article class="weapon-card flip-card reveal-on-scroll" data-category="Heavy">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="ares.png" alt="Ares weapon">
+            <img src="/public/assets/ares.png" alt="Ares">
             <div class="weapon-front-label">
               <h2 class="weapon-name">Ares</h2>
               <p class="weapon-type">Heavy</p>
             </div>
           </div>
           <div class="flip-card-back">
-            <header class="weapon-header">
-              <h2 class="weapon-name">Ares</h2>
-              <p class="weapon-type">Heavy · 1600 credits</p>
-            </header>
-            <div class="weapon-stats-row">
-              <div><span class="stat-label">Role</span><span class="stat-value blue">Budget LMG</span></div>
-              <div><span class="stat-label">Damage</span><span class="stat-value red">Ramp‑up fire</span></div>
-              <div><span class="stat-label">Fire</span><span class="stat-value green">10–13</span></div>
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Ares</h3>
+              <span class="weapon-meta">1600 · Heavy</span>
             </div>
-            <p class="weapon-note">Cheap machine gun for spam and wall‑bangs.[web:63]</p>
-            <button class="btn-outline-valorant" type="button">
-              <span class="label"><span class="hover-effect"></span><span class="label-text">Spam walls</span></span>
-            </button>
+            <div class="weapon-badges">
+              <span class="weapon-badge blue">Spam</span>
+              <span class="weapon-badge green">Value</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Fire</span>
+                <span class="weapon-stat-value">10–13 r/s</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">50 rounds</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Use</span>
+                <span class="weapon-stat-value">Wall spam</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Budget LMG that ramps up fire rate and excels at spamming through cover and utility.
+            </p>
           </div>
         </div>
       </article>
 
+      <!-- Odin -->
       <article class="weapon-card flip-card reveal-on-scroll" data-category="Heavy">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="odin.png" alt="Odin weapon">
+            <img src="/public/assets/odin.png" alt="Odin">
             <div class="weapon-front-label">
               <h2 class="weapon-name">Odin</h2>
               <p class="weapon-type">Heavy</p>
             </div>
           </div>
           <div class="flip-card-back">
-            <header class="weapon-header">
-              <h2 class="weapon-name">Odin</h2>
-              <p class="weapon-type">Heavy · 3200 credits</p>
-            </header>
-            <div class="weapon-stats-row">
-              <div><span class="stat-label">Role</span><span class="stat-value blue">High‑DPS LMG</span></div>
-              <div><span class="stat-label">Damage</span><span class="stat-value red">Shreds cover</span></div>
-              <div><span class="stat-label">Fire</span><span class="stat-value green">12–15.6</span></div>
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Odin</h3>
+              <span class="weapon-meta">3200 · Heavy</span>
             </div>
-            <p class="weapon-note">Post‑plant and spam king for wall control.[web:63]</p>
-            <button class="btn-outline-valorant" type="button">
-              <span class="label"><span class="hover-effect"></span><span class="label-text">Post‑plant</span></span>
-            </button>
+            <div class="weapon-badges">
+              <span class="weapon-badge red">High DPS</span>
+              <span class="weapon-badge green">Post‑Plant</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Fire</span>
+                <span class="weapon-stat-value">12–15.6 r/s</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Mag</span>
+                <span class="weapon-stat-value">100 rounds</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Role</span>
+                <span class="weapon-stat-value">Site lockdown</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Massive LMG for suppressive fire, site holds, and post‑plant spam through walls.
+            </p>
           </div>
         </div>
       </article>
-    </section>
 
-    <!-- SHIELDS -->
-    <section class="shields-section">
-      <header class="section-header">
-        <p class="hero-kicker">Stay alive longer</p>
-        <h2 class="section-title">Shields & Defense</h2>
-        <p class="section-desc">
-          Light Shields add 25 armor and Heavy Shields add 50, changing how many bullets it takes to secure a kill and influencing buy round decisions.[web:68][web:86]
-        </p>
-      </header>
+      <!-- ========== MELEE ========== -->
 
-      <div class="shields-grid">
-        <article class="shield-card flip-card reveal-on-scroll" data-category="Shields">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="lightshield.png" alt="Light shields">
-              <div class="weapon-front-label">
-                <h2 class="weapon-name">Light Shields</h2>
-                <p class="weapon-type">Defense</p>
-              </div>
-            </div>
-            <div class="flip-card-back">
-              <header class="weapon-header">
-                <h2 class="weapon-name">Light Shields</h2>
-                <p class="weapon-type">Cost · 400 credits</p>
-              </header>
-              <div class="weapon-stats-row">
-                <div><span class="stat-label">Bonus HP</span><span class="stat-value blue">+25</span></div>
-                <div><span class="stat-label">Use</span><span class="stat-value green">Pistol / light buys</span></div>
-                <div><span class="stat-label">Value</span><span class="stat-value red">Low risk</span></div>
-              </div>
-              <p class="shield-text">
-                Great when credits are tight but you still want to survive one extra bullet.[web:68][web:112]
-              </p>
-              <button class="btn-outline-valorant" type="button">
-                <span class="label"><span class="hover-effect"></span><span class="label-text">Eco armor</span></span>
-              </button>
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="Melee">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/public/assets/knife.jpg" alt="Tactical Knife">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Tactical Knife</h2>
+              <p class="weapon-type">Melee</p>
             </div>
           </div>
-        </article>
-
-        <article class="shield-card flip-card reveal-on-scroll" data-category="Shields">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="heavyshield.png" alt="Heavy shields">
-              <div class="weapon-front-label">
-                <h2 class="weapon-name">Heavy Shields</h2>
-                <p class="weapon-type">Defense</p>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Tactical Knife</h3>
+              <span class="weapon-meta">Free · Melee</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge green">Run Speed</span>
+              <span class="weapon-badge red">Backstab</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Back</span>
+                <span class="weapon-stat-value">One‑shot</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Front</span>
+                <span class="weapon-stat-value">2‑hit</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Bonus</span>
+                <span class="weapon-stat-value">Moves faster</span>
               </div>
             </div>
-            <div class="flip-card-back">
-              <header class="weapon-header">
-                <h2 class="weapon-name">Heavy Shields</h2>
-                <p class="weapon-type">Cost · 1000 credits</p>
-              </header>
-              <div class="weapon-stats-row">
-                <div><span class="stat-label">Bonus HP</span><span class="stat-value blue">+50</span></div>
-                <div><span class="stat-label">Use</span><span class="stat-value green">Full rifle buys</span></div>
-                <div><span class="stat-label">Value</span><span class="stat-value red">Max armor</span></div>
-              </div>
-              <p class="shield-text">
-                Standard pick in full‑buy rounds for maximum survivability.[web:68][web:86]
-              </p>
-              <button class="btn-outline-valorant" type="button">
-                <span class="label"><span class="hover-effect"></span><span class="label-text">Full armor</span></span>
-              </button>
+            <p class="weapon-desc">
+              Always‑available melee that boosts movement speed and rewards bold backstab flanks.
+          </div>
+        </div>
+      </article>
+
+      <!-- ========== SHIELDS (3) ========== -->
+
+      <!-- Light Shields -->
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="Shields">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/public/assets/Screenshot 2025-12-16 221135.png" alt="Light Shields">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Light Shields</h2>
+              <p class="weapon-type">Shields</p>
             </div>
           </div>
-        </article>
-
-        <article class="shield-card flip-card reveal-on-scroll" data-category="Shields">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="./assets/bclassic.jpg" alt="Regen shields concept">
-              <div class="weapon-front-label">
-                <h2 class="weapon-name">Regen Shields</h2>
-                <p class="weapon-type">Concept</p>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Light Shields</h3>
+              <span class="weapon-meta">400 · Armor</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge blue">+25 Armor</span>
+              <span class="weapon-badge green">Pistol / Half</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">HP total</span>
+                <span class="weapon-stat-value">125</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Best for</span>
+                <span class="weapon-stat-value">Early rounds</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Risk</span>
+                <span class="weapon-stat-value">Cheaper</span>
               </div>
             </div>
-            <div class="flip-card-back">
-              <header class="weapon-header">
-                <h2 class="weapon-name">Regen Shields</h2>
-                <p class="weapon-type">Concept · 650 credits</p>
-              </header>
-              <div class="weapon-stats-row">
-                <div><span class="stat-label">Bonus HP</span><span class="stat-value blue">+75 over time</span></div>
-                <div><span class="stat-label">Playstyle</span><span class="stat-value green">Disengage & re‑peek</span></div>
-                <div><span class="stat-label">Risk</span><span class="stat-value red">Weak in long duels</span></div>
-              </div>
-              <p class="shield-text">
-                Custom concept armor that slowly repairs between fights when you avoid damage.
-              </p>
-              <button class="btn-outline-valorant" type="button">
-                <span class="label"><span class="hover-effect"></span><span class="label-text">Reset fights</span></span>
-              </button>
+            <p class="weapon-desc">
+              Low‑cost armor that lets you survive extra bullets without sacrificing too many credits.
+          </div>
+        </div>
+      </article>
+
+      <!-- Heavy Shields -->
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="Shields">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="/public/assets/heavy.png" alt="Heavy Shields">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Heavy Shields</h2>
+              <p class="weapon-type">Shields</p>
             </div>
           </div>
-        </article>
-      </div>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Heavy Shields</h3>
+              <span class="weapon-meta">1000 · Armor</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge blue">+50 Armor</span>
+              <span class="weapon-badge green">Full Buy</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">HP total</span>
+                <span class="weapon-stat-value">150</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Best for</span>
+                <span class="weapon-stat-value">Rifle rounds</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Risk</span>
+                <span class="weapon-stat-value">Costly</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Standard armor choice on rifle rounds when your team can afford full utility and guns.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Regen Shields (concept) -->
+      <article class="weapon-card flip-card reveal-on-scroll" data-category="Shields">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+
+            <img src="/public/assets/regen.png" alt="Regen Shields">
+            <div class="weapon-front-label">
+              <h2 class="weapon-name">Regen Shields</h2>
+              <p class="weapon-type">Concept</p>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <div class="weapon-back-header">
+              <h3 class="weapon-name">Regen Shields</h3>
+              <span class="weapon-meta">650 · Armor</span>
+            </div>
+            <div class="weapon-badges">
+              <span class="weapon-badge green">Regenerates</span>
+              <span class="weapon-badge red">Time‑Based</span>
+            </div>
+            <div class="weapon-stat-grid">
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Max bonus</span>
+                <span class="weapon-stat-value">+75 over time</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Best for</span>
+                <span class="weapon-stat-value">Long rounds</span>
+              </div>
+              <div class="weapon-stat">
+                <span class="weapon-stat-label">Risk</span>
+                <span class="weapon-stat-value">Weak burst</span>
+              </div>
+            </div>
+            <p class="weapon-desc">
+              Custom concept armor for your site that slowly repairs between fights if you disengage.
+            </p>
+          </div>
+        </div>
+      </article>
+
     </section>
   </main>
 
-  <footer class="footer">
+  <!-- Weapons script: filter + scroll reveal -->
+  <script src="weapons.js" defer></script>
+
+   <footer class="footer">
     <div class="footer-left">
       <p class="footer-brand">Valorant Hub</p>
       <p>
-        These summaries highlight typical roles and rough stats and should be used together with the detailed numbers in the official client and arsenal site.[web:65]
+        This Agents page groups the roster by role and offers short style summaries to guide new
+        players. The information is intended for learning and practice and does not replace the
+        official game client.
       </p>
       <nav class="footer-links">
         <a href="index.html">Home</a>
         <a href="agents.html">Agents</a>
         <a href="weapons.html">Weapons</a>
+        <a href="weapons.html">Maps</a>
+        <a href="weapons.html">Esports</a>
+        <a href="weapons.html">About Us</a>
+
       </nav>
     </div>
 
-    <div class="social-icons">
+  <div class="social-icons">
       <ul>
-        <li><a href="#"><i class="fab fa-facebook-f icon"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitter icon"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitch icon"></i></a></li>
-        <li><a href="#"><i class="fab fa-youtube icon"></i></a></li>
+        <li><a href="https://playvalorant.com/en-gb/"><span class="icon"><i class="fa-brands fa-github"></i></span></a></li>
+        <li><a href="https://www.instagram.com/oregaknows/"><span class="icon"><i class="fa-brands fa-x-twitter"></i></span></a></li>
+        <li><a href="https://www.instagram.com/jiw2ng/"><span class="icon"><i class="fa-brands fa-instagram"></i></span></a></li>
       </ul>
     </div>
+    </div>
+    <p class="copyright">
+      © 2025 @NathanOgerioYsaRosario2025. All rights reserved.
+    </p>
+  </div>
   </footer>
 
-  <script src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" crossorigin="anonymous"></script>
-  <script src="main.js" defer></script>
-  <script src="weapons.js" defer></script>
+
 </body>
 </html>

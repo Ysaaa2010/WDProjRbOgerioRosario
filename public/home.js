@@ -1,34 +1,25 @@
-// Theme toggle: remembers choice across all pages using localStorage.[web:25][web:28]
-(function () {
-  const html = document.documentElement;
-  const toggleBtn = document.getElementById('theme-toggle');
-  const STORAGE_KEY = 'vh-theme';
+// home.js
+// Simple scroll-reveal for tiles and hero mini-cards.
 
-  if (!toggleBtn) return;
+document.addEventListener('DOMContentLoaded', () => {
+  const revealItems = document.querySelectorAll('.reveal-on-scroll');
 
-  // Apply saved theme on load
-  const savedTheme = localStorage.getItem(STORAGE_KEY);
-  if (savedTheme === 'light' || savedTheme === 'dark') {
-    html.setAttribute('data-theme', savedTheme);
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    revealItems.forEach(el => observer.observe(el));
+  } else {
+    revealItems.forEach(el => el.classList.add('is-visible'));
   }
+});
 
-  // Update button state (icon + aria-pressed)
-  function syncToggle() {
-    const current = html.getAttribute('data-theme') || 'dark';
-    const isDark = current === 'dark';
-
-    toggleBtn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-    toggleBtn.querySelector('.theme-icon').textContent = isDark ? '🌙' : '☀️';
-  }
-
-  syncToggle();
-
-  toggleBtn.addEventListener('click', () => {
-    const current = html.getAttribute('data-theme') || 'dark';
-    const next = current === 'dark' ? 'light' : 'dark';
-
-    html.setAttribute('data-theme', next);
-    localStorage.setItem(STORAGE_KEY, next);
-    syncToggle();
-  });
-})();
