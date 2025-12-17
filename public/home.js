@@ -4,6 +4,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const revealItems = document.querySelectorAll('.reveal-on-scroll');
 
+  // Scroll reveal
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(
       entries => {
@@ -21,5 +22,22 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     revealItems.forEach(el => el.classList.add('is-visible'));
   }
-});
 
+  // ===== Game modes tabs =====
+  const modeTabs = document.querySelectorAll('.modes-tab');
+  const modePanels = document.querySelectorAll('.modes-panel');
+
+  modeTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const mode = tab.dataset.mode;
+
+      modeTabs.forEach(t => t.classList.remove('modes-tab-active'));
+      modePanels.forEach(p => p.classList.remove('modes-panel-active'));
+
+      tab.classList.add('modes-tab-active');
+      document
+        .querySelector(`.modes-panel[data-mode="${mode}"]`)
+        .classList.add('modes-panel-active');
+    });
+  });
+});

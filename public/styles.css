@@ -2,6 +2,7 @@
    VALORANT HUB — SINGLE GLOBAL STYLES.CSS
    ===================================================== */
 
+
 /* ---------- THEME COLORS ---------- */
 
 :root {
@@ -36,6 +37,7 @@ html[data-theme="light"] {
   --border-subtle: #d4d4d8;
 }
 
+
 /* ---------- RESET + BODY ---------- */
 
 *,
@@ -58,12 +60,11 @@ body {
   /* full-page background image with dark transparent overlay */
   background-image:
     linear-gradient(rgba(0,0,0,0.70), rgba(0,0,0,0.90)),
-    url("/public/assets/1249094.jpg");
+    url("./assets/1249094.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
-
 
 a {
   color: inherit;
@@ -77,6 +78,7 @@ a:hover {
 main {
   display: block;
 }
+
 
 /* =====================================================
    HEADER + NAV + THEME TOGGLE
@@ -154,6 +156,7 @@ main {
   font-size: 1rem;
 }
 
+
 /* =====================================================
    GLOBAL BUTTONS
    ===================================================== */
@@ -177,6 +180,8 @@ main {
 .btn.primary {
   background: var(--accent);
   color: #020617;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn.primary:hover {
@@ -196,11 +201,6 @@ main {
 
 /* Glow sweep extra effect */
 
-.btn.primary {
-  position: relative;
-  overflow: hidden;
-}
-
 .btn.primary::before {
   content: "";
   position: absolute;
@@ -216,6 +216,7 @@ main {
   opacity: 1;
   transform: translateX(0);
 }
+
 
 /* =====================================================
    TAGS / FILTER CHIPS
@@ -251,6 +252,7 @@ main {
   border-color: var(--accent);
   color: #020617;
 }
+
 
 /* =====================================================
    HOME PAGE SECTIONS
@@ -343,6 +345,13 @@ main {
   box-shadow: 0 18px 42px rgba(0,0,0,0.9);
   transform-origin: center;
   animation: floatCard 7s ease-in-out infinite;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.hero-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  border-color: rgba(248,113,113,0.7);
+  box-shadow: 0 26px 60px rgba(0,0,0,1);
 }
 
 .hero-card img {
@@ -451,6 +460,7 @@ main {
   color: var(--text-muted);
 }
 
+
 /* Home grid tiles */
 
 .home-grid {
@@ -542,6 +552,7 @@ tile-list li + li {
   color: var(--accent-strong);
 }
 
+
 /* =====================================================
    FLIP CARD BASE (weapons + agents)
    ===================================================== */
@@ -566,8 +577,8 @@ tile-list li + li {
 }
 
 .agent-card.flip-card {
-  width: 180px;
-  height: 260px;
+  width: 210px;
+  height: 280px;
 }
 
 .weapon-card.flip-card:hover,
@@ -640,10 +651,11 @@ tile-list li + li {
 
 .flip-card-front img {
   width: 100%;
-  height: 65%;
-  object-fit: cover;
+  height: 60%;
+  object-fit: contain;
   object-position: center;
   display: block;
+  background: #e5dfd4;
 }
 
 .flip-card-front h2,
@@ -657,9 +669,10 @@ tile-list li + li {
   align-items: center;
   justify-content: center;
   background: #020617;
+  color: #ffffff;
 }
 
-/* Shared back: content constrained so it never stretches card */
+/* Shared back */
 
 .flip-card-back {
   background: radial-gradient(circle at top, var(--accent-soft), var(--card-bg));
@@ -669,7 +682,7 @@ tile-list li + li {
   padding-bottom: 8px;
 }
 
-/* Limit text area so long descriptions don't change card height */
+/* Limit text area */
 
 .flip-card-back .agent-blurb,
 .flip-card-back .agent-ability-list,
@@ -678,6 +691,7 @@ tile-list li + li {
   max-height: 110px;
   overflow: hidden;
 }
+
 
 /* =====================================================
    WEAPONS PAGE LAYOUT + BACK CONTENT
@@ -797,6 +811,7 @@ tile-list li + li {
   background: linear-gradient(0deg, rgba(0,0,0,0.9), transparent);
 }
 
+
 /* =====================================================
    AGENTS PAGE LAYOUT + BACK CONTENT + PREVIEW
    ===================================================== */
@@ -909,6 +924,7 @@ tile-list li + li {
   color: var(--text-muted);
 }
 
+
 /* =====================================================
    FOOTER
    ===================================================== */
@@ -943,6 +959,12 @@ tile-list li + li {
   max-width: 460px;
   color: var(--text-muted);
   font-size: 0.78rem;
+}
+
+.footer-left .copyright {
+  margin-top: 6px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
 }
 
 .footer-links {
@@ -991,6 +1013,7 @@ tile-list li + li {
   transform: translateY(-1px);
 }
 
+
 /* =====================================================
    SCROLL REVEAL (used everywhere)
    ===================================================== */
@@ -1006,106 +1029,336 @@ tile-list li + li {
   transform: translateY(0);
 }
 
+
 /* =====================================================
-   ANIMATIONS + RESPONSIVE
+   HOME PAGE – EXTRA SECTIONS
    ===================================================== */
 
-@keyframes floatCard {
-  0%, 100% { transform: translateY(0px) rotate3d(0, 1, 0, 0deg); }
-  50% { transform: translateY(-6px) rotate3d(0, 1, 0, 3deg); }
+/* Quick stats strip */
+.home-stats {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
 }
 
-@media (max-width: 1000px) {
-  .site-header {
-    padding: 10px 20px;
-  }
-
-  .home-main {
-    padding: 28px 20px 24px;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-right {
-    order: -1;
-  }
-
-  .home-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .agents-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .agents-list {
-    padding: 28px 20px;
-    border-right: none;
-    border-bottom: 1px solid var(--border-subtle);
-  }
-
-  .agent-preview-panel {
-    padding: 32px 20px 40px;
-  }
+.home-stats-card {
+  background: radial-gradient(circle at top, rgba(148,163,184,0.18), #020617);
+  border-radius: 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.85);
 }
 
-@media (max-width: 640px) {
-  .home-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer {
-    padding: 16px 20px 18px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
+.home-stats-card h3 {
+  margin: 0 0 4px;
+  font-size: 1.1rem;
 }
 
-/* Weapon card specific sizing */
-.weapon-card.flip-card {
-  width: 210px;
-  height: 280px;
-}
-
-/* Weapon images: zoomed out + centered */
-.weapon-card.flip-card img {
-  width: 100%;
-  height: 60%;          /* was 65–70, this shows more of each gun */
-  object-fit: contain;  /* show full image instead of cropping */
-  object-position: center;
-  background: #e5dfd4;  /* same beige backdrop as your screenshot */
-}
-
-/* Weapon card specific sizing */
-.agent-card.flip-card {
-  width: 210px;
-  height: 280px;
-}
-
-/* Weapon images: zoomed out + centered */
-.agent-card.flip-card img {
-  width: 100%;
-  height: 90%;          /* was 65–70, this shows more of each gun */
-  object-fit: contain;  /* show full image instead of cropping */
-  object-position: center;
-  background: #e5dfd4;  /* same beige backdrop as your screenshot */
-}
-
-/* Agent + weapon names on cards */
-.flip-card-front h2,
-.flip-card-front h3 {
-  color: #ffffff;        /* make the text white */
-}
-.footer-left .copyright {
-  margin-top: 6px;
-  font-size: 0.72rem;
+.home-stats-card p {
+  margin: 0;
+  font-size: 0.82rem;
   color: var(--text-muted);
 }
 
 
+/* Featured agent + weapon – aligned cards */
 
+.home-featured {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.featured-card {
+  display: grid;
+  grid-template-columns: 1.1fr 1.6fr;
+  align-items: stretch;
+  gap: 16px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid var(--border-subtle);
+  background: radial-gradient(circle at top, rgba(248,113,113,0.12), #020617);
+  box-shadow: 0 18px 42px rgba(0,0,0,0.9);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.featured-card::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at top right, rgba(248,113,113,0.35), transparent 65%);
+  mix-blend-mode: screen;
+  opacity: 0;
+  transform: translateX(-15%);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  pointer-events: none;
+}
+
+.featured-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(248,113,113,0.7);
+  box-shadow: 0 22px 54px rgba(0,0,0,1);
+}
+
+.featured-card:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* image side */
+
+.featured-media {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background: #020617;
+  height: 170px;
+}
+
+.featured-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* text side */
+
+.featured-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+.featured-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(248,113,113,0.6);
+  color: var(--accent-strong);
+  margin-bottom: 2px;
+}
+
+.featured-content h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.featured-role {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.featured-body {
+  margin: 2px 0 8px;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+
+.featured-link {
+  font-size: 0.75rem;
+}
+
+/* Getting started section */
+
+.home-start {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.6fr);
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.home-start-left h2 {
+  font-family: 'VALORANT', sans-serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  margin: 0 0 6px;
+}
+
+.home-start-left p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 360px;
+}
+
+.home-start-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.home-start-steps li {
+  background: #020617;
+  border-radius: 14px;
+  border: 1px solid var(--border-subtle);
+  padding: 10px 14px 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-start-steps li::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(248,113,113,0.0);
+  transition: border-color 0.22s ease, box-shadow 0.22s ease;
+  pointer-events: none;
+}
+
+.home-start-steps li:hover::before {
+  border-color: rgba(248,113,113,0.7);
+  box-shadow: 0 0 14px rgba(248,113,113,0.6);
+}
+
+.step-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent-strong);
+}
+
+.home-start-steps h3 {
+  margin: 2px 0 2px;
+  font-size: 0.95rem;
+}
+
+.home-start-steps p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Responsive for extra sections */
+
+@media (max-width: 900px) {
+  .home-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .home-featured {
+    grid-template-columns: 1fr;
+  }
+
+  .home-start {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =====================================================
+   HOME PAGE – MODES + ECONOMY (FIXED & SCALED)
+   ===================================================== */
+
+/* ---------------- MODES SECTION ---------------- */
+
+.home-modes {
+  margin-top: 40px;
+  padding: 22px 22px 24px;
+  border-radius: 18px;
+  border: 1px solid var(--border-subtle);
+  background: radial-gradient(circle at top, rgba(56,189,248,0.18), #020617);
+  box-shadow: 0 18px 42px rgba(0,0,0,0.9);
+}
+
+.modes-header h2 {
+  margin: 0 0 6px;
+  font-family: 'VALORANT', sans-serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 1.35rem;
+}
+
+.modes-header p {
+  margin: 0 0 14px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Tabs */
+
+.modes-tabs {
+  display: inline-flex;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(15,23,42,0.95);
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 18px;
+}
+
+.modes-tab {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modes-tab:hover {
+  color: var(--text-main);
+  transform: translateY(-1px);
+}
+
+.modes-tab-active {
+  background: var(--accent);
+  color: #020617;
+}
+
+/* Panels */
+
+.modes-panels {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.modes-panel {
+  display: none;
+  background: #020617;
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  padding: 16px 18px;
+}
+
+.modes-panel-active {
+  display: block;
+}
+
+.modes-panel h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.modes-panel p,
+.modes-panel ul {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
 
 
 
