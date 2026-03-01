@@ -1,0 +1,543 @@
+/* ============================================================
+   VALORANT PROTOCOL 2026 — weapons.css
+   Weapons/Arsenal page — redesigned
+   Authors: Ysa Rosario & Nathan Ogerio
+   ============================================================ */
+
+/* ── FILTER BAR ── */
+.weapons-filter-bar {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 28px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ── COMPARE SECTION ── */
+.weapons-compare {
+  background: var(--bg-panel);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.compare-tool {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 820px;
+}
+.compare-select-wrap {
+  display: grid;
+  grid-template-columns: 1fr 56px 1fr;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.compare-slot {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.compare-slot:first-child { border-right: 1px solid var(--border); }
+.compare-slot:last-child  { border-left:  1px solid var(--border); }
+.compare-slot label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--primary);
+  text-transform: uppercase;
+}
+.compare-select {
+  width: 100%;
+  padding: 10px 36px 10px 12px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23ff4655' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  transition: border-color var(--transition);
+}
+.compare-select:focus  { border-color: var(--primary); }
+.compare-select option { background: #1e1e1e; }
+.compare-vs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--primary);
+  background: var(--bg-hover);
+}
+
+/* Compare Result */
+.compare-result {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  animation: fade-up 0.3s ease;
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.compare-legend {
+  display: flex;
+  gap: 24px;
+  padding: 14px 24px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-panel);
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+}
+.legend-dot {
+  width: 14px;
+  height: 4px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.compare-bars { display: flex; flex-direction: column; padding: 4px 0; }
+.compare-bar-row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  align-items: center;
+  gap: 16px;
+  padding: 11px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  transition: background var(--transition);
+}
+.compare-bar-row:last-child { border-bottom: none; }
+.compare-bar-row:hover { background: rgba(255,255,255,0.02); }
+.compare-bar-label {
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.compare-dual-bars { display: flex; flex-direction: column; gap: 5px; }
+.compare-bar-track {
+  height: 8px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.compare-bar-fill-a {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 4px;
+  transition: width 0.9s cubic-bezier(0.16,1,0.3,1);
+}
+.compare-bar-fill-b {
+  height: 100%;
+  background: #60a5fa;
+  border-radius: 4px;
+  transition: width 0.9s cubic-bezier(0.16,1,0.3,1);
+}
+
+/* ── CATEGORY SECTION ── */
+.weapon-category-section { margin-bottom: 52px; }
+.weapon-category-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.weapon-category-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0;
+  width: 48px; height: 2px;
+  background: var(--primary);
+  border-radius: 1px;
+}
+.weapon-category-header h2 { font-size: 1.3rem; letter-spacing: 0.14em; }
+
+/* ── WEAPON GRID — vertical list of rows ── */
+.weapons-role-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ── WEAPON CARD — horizontal layout ── */
+.weapon-card {
+  display: grid;
+  grid-template-columns: 110px 1fr 160px;
+  align-items: stretch;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  position: relative;
+}
+.weapon-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--primary);
+  opacity: 0;
+  transition: opacity 0.22s ease;
+  z-index: 2;
+}
+.weapon-card:hover {
+  border-color: rgba(255,70,85,0.4);
+  background: #1e1e1e;
+  transform: translateX(4px);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.5), 0 0 16px var(--primary-glow);
+}
+.weapon-card:hover::before { opacity: 1; }
+
+/* ── WEAPON VISUAL THUMBNAIL ── */
+.weapon-card-img {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--border);
+  overflow: hidden;
+  min-height: 86px;
+}
+
+/* Layered background: base color + diagonal hatch + radial glow */
+.weapon-thumb {
+  position: absolute;
+  inset: 0;
+  background: var(--bg-panel);
+}
+.weapon-thumb::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0px, transparent 5px,
+    rgba(255,255,255,0.025) 5px, rgba(255,255,255,0.025) 6px
+  );
+}
+.weapon-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 120% 100% at 70% 50%, var(--wglow, rgba(255,70,85,0.22)), transparent 70%);
+}
+/* Faded category letter watermark */
+.weapon-thumb-letter {
+  position: absolute;
+  right: 6px;
+  bottom: 2px;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.05);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 1;
+  text-transform: uppercase;
+}
+/* Actual emoji, sits above everything */
+.weapon-thumb-emoji {
+  position: relative;
+  z-index: 3;
+  font-size: 2.2rem;
+  filter: drop-shadow(0 3px 10px rgba(0,0,0,0.8));
+  transition: transform 0.22s ease;
+}
+.weapon-card:hover .weapon-thumb-emoji {
+  transform: scale(1.18) rotate(-8deg);
+}
+.weapon-new-badge {
+  position: absolute;
+  top: 6px; right: 6px;
+  background: var(--primary);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  padding: 2px 6px;
+  border-radius: 2px;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  z-index: 4;
+}
+
+/* ── WEAPON INFO CELL ── */
+.weapon-card-body {
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  min-width: 0;
+}
+.weapon-card-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.weapon-card-cost { font-family: var(--font-mono); font-size: 0.78rem; }
+.weapon-card-cost .creds { color: #facc15; font-weight: 700; }
+.weapon-card-stats { display: flex; gap: 5px; flex-wrap: wrap; }
+.wstat {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 3px;
+  padding: 2px 7px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+}
+
+/* ── MINI STAT BARS CELL ── */
+.weapon-card-bars {
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  border-left: 1px solid var(--border);
+  background: rgba(0,0,0,0.15);
+}
+.wcard-bar-row { display: flex; align-items: center; gap: 8px; }
+.wcard-bar-key {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  color: var(--text-muted);
+  width: 24px;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.wcard-bar-track {
+  flex: 1;
+  height: 4px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.wcard-bar-fill {
+  height: 100%;
+  background: var(--faction-gradient);
+  border-radius: 2px;
+}
+.wcard-bar-val {
+  font-family: var(--font-mono);
+  font-size: 0.54rem;
+  color: var(--text-muted);
+  width: 22px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* ── WEAPON MODAL ── */
+.wmodal-header {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  background: #111;
+  border-bottom: 1px solid var(--border);
+  min-height: 170px;
+  overflow: hidden;
+  position: relative;
+}
+.wmodal-header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--faction-gradient);
+  opacity: 0.04;
+  pointer-events: none;
+}
+/* Modal weapon visual cell */
+.wmodal-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-right: 1px solid var(--border);
+}
+.wmodal-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0px, transparent 8px,
+    rgba(255,255,255,0.03) 8px, rgba(255,255,255,0.03) 9px
+  );
+}
+.wmodal-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, var(--primary-glow), transparent 65%);
+}
+.wmodal-img {
+  font-size: 4.5rem;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 4px 20px rgba(0,0,0,0.8));
+}
+/* Modal info */
+.wmodal-info {
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  position: relative;
+  z-index: 1;
+}
+.wmodal-name {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--primary);
+  text-shadow: 0 0 30px var(--primary-glow);
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+.wmodal-cost {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: #facc15;
+  margin-top: 2px;
+}
+.wmodal-cat {
+  display: inline-block;
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 3px 10px;
+  border: 1px solid var(--primary);
+  border-radius: 2px;
+  color: var(--primary);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+/* Modal stat boxes */
+.wmodal-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px;
+  padding: 24px 32px;
+  border-bottom: 1px solid var(--border);
+}
+.wstat-item {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  text-align: center;
+  transition: border-color var(--transition);
+}
+.wstat-item:hover { border-color: var(--primary); }
+.wstat-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+.wstat-val {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--text-primary);
+}
+/* Modal bars */
+.wmodal-bars {
+  padding: 20px 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.wbar-row { display: flex; flex-direction: column; gap: 6px; }
+.wbar-label-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+.wbar-track {
+  height: 8px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.wbar-fill {
+  height: 100%;
+  background: var(--faction-gradient);
+  border-radius: 4px;
+  transition: width 0.7s ease;
+}
+.wmodal-desc {
+  padding: 20px 32px 28px;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .weapon-card { grid-template-columns: 80px 1fr; }
+  .weapon-card-bars { display: none; }
+  .compare-select-wrap { grid-template-columns: 1fr; }
+  .compare-vs { padding: 10px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .compare-slot:first-child { border-right: none; }
+  .compare-slot:last-child  { border-left: none; }
+  .wmodal-stats-grid { grid-template-columns: repeat(2,1fr); }
+  .wmodal-header { grid-template-columns: 100px 1fr; }
+  .wmodal-name { font-size: 1.8rem; }
+}
+@media (max-width: 480px) {
+  .wmodal-header { grid-template-columns: 1fr; }
+  .wmodal-visual { min-height: 100px; border-right: none; border-bottom: 1px solid var(--border); }
+}
+
+/* ── WEAPON CARD PHOTO (when image provided) ── */
+.weapon-card-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+.weapon-thumb-fallback {
+  position: absolute;
+  inset: 0;
+}

@@ -1,0 +1,22 @@
+{
+  "name": "VALORANT PROTOCOL 2026",
+  "short_name": "VAL2026",
+  "description": "The Omega Breach — Your tactical companion for VALORANT Protocol 2026",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#0f0f0f",
+  "theme_color": "#ff4655",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/valorant.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/valorant.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

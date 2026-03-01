@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ====================================================
+       VALORANT PROTOCOL 2026 — home.html
+       Main hub page with hero, news, and feature sections
+       Authors: Ysa Rosario & Nathan Ogerio
+       ==================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="VALORANT Protocol 2026 Home — Masters Santiago live, latest patches, agent updates, and more." />
+  <meta name="keywords" content="Valorant, Masters Santiago, 2026, agents, weapons, maps, esports" />
+  <meta name="author" content="Ysa Rosario, Nathan Ogerio" />
+  <meta property="og:title" content="VALORANT PROTOCOL 2026 — Home" />
+  <meta property="og:description" content="Your tactical companion for the Omega Breach. Live scores, agent database, and more." />
+  <title>Home — VALORANT PROTOCOL 2026</title>
+  <link rel="icon" type="image/png" href="assets/valorant.png" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+
+  <!-- ── Loading Screen ── -->
+  <div id="loading-screen">
+    <img src="assets/valorant.png" alt="Valorant Logo" class="loading-logo" />
+    <div class="loading-bar-container"><div class="loading-bar"></div></div>
+    <p class="loading-text">CONNECTING TO PROTOCOL...</p>
+  </div>
+
+  <!-- ── Navbar ── -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- ── Easter Egg Overlay ── -->
+  <div id="lore-overlay">
+    <h2>⚠ CLASSIFIED FOOTAGE ⚠</h2>
+    <div id="lore-video-container">
+      <div class="lore-icon">📡</div>
+      <p style="color:var(--primary);font-family:var(--font-mono);font-size:0.85rem;letter-spacing:0.1em">EARTH-2 TRANSMISSION INTERCEPTED</p>
+      <p style="font-size:0.85rem;color:rgba(255,255,255,0.6);margin-top:8px">Welcome to My World — 2026 Omega Breach Cinematic</p>
+      <p style="font-size:0.75rem;color:rgba(255,255,255,0.4);margin-top:16px;font-style:italic">"They came from our world. Now they want ours."</p>
+    </div>
+    <button id="lore-close">CLOSE TRANSMISSION</button>
+  </div>
+
+  <!-- ── HERO SECTION ── -->
+  <section class="home-hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-gradient-overlay"></div>
+      <div class="hero-particles" id="hero-particles"></div>
+    </div>
+    <div class="hero-content container">
+      <div class="hero-eyebrow reveal">
+        <span class="hero-live-dot"></span>
+        <span>MASTERS SANTIAGO 2026 — NOW LIVE</span>
+      </div>
+      <h1 class="hero-title reveal reveal-delay-1">
+        <span class="hero-title-line">VALORANT</span>
+        <span class="hero-title-line accent-text">PROTOCOL</span>
+        <span class="hero-title-line">2026</span>
+      </h1>
+      <p class="hero-subtitle reveal reveal-delay-2">
+        The Omega Breach is here. Earth-1 and Earth-2 collide.<br/>
+        Your tactical companion for the new era of VALORANT.
+      </p>
+      <div class="hero-actions reveal reveal-delay-3">
+        <a href="match-center.html" class="btn btn-primary btn-lg">
+          <span class="live-dot-sm"></span>
+          Watch Live
+        </a>
+        <a href="agents.html" class="btn btn-outline btn-lg">Browse Agents</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>SCROLL</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ── QUICK STATS TICKER ── -->
+  <div class="stats-ticker">
+    <div class="ticker-track" id="ticker-track">
+      <span>🏆 MASTERS SANTIAGO 2026</span>
+      <span class="ticker-sep">·</span>
+      <span>📅 FEB 28 – MAR 16</span>
+      <span class="ticker-sep">·</span>
+      <span>⚔️ NRG vs XLG — LIVE NOW</span>
+      <span class="ticker-sep">·</span>
+      <span>🔫 NEW WEAPON: THE BANDIT (600 CR)</span>
+      <span class="ticker-sep">·</span>
+      <span>🧬 NEW AGENTS: VETO + TEJO</span>
+      <span class="ticker-sep">·</span>
+      <span>🗺️ NEW MAP: CORRODE</span>
+      <span class="ticker-sep">·</span>
+      <span>🔁 BREEZE 2026 REWORK</span>
+      <span class="ticker-sep">·</span>
+      <span>📦 PATCH 12.0 LIVE</span>
+      <span class="ticker-sep">·</span>
+    </div>
+  </div>
+
+  <!-- ── MASTERS SANTIAGO FEATURE ── -->
+  <section class="section home-masters reveal">
+    <div class="container">
+      <span class="section-label">🏆 Live Event</span>
+      <div class="masters-feature">
+        <div class="masters-info">
+          <h2 class="display-md">MASTERS SANTIAGO 2026</h2>
+          <p class="masters-desc">The world's best VALORANT teams converge in Santiago, Chile for the first international of 2026. Watch the Swiss Stage unfold live.</p>
+          <div class="masters-meta">
+            <div class="meta-item">
+              <span class="meta-label">Date</span>
+              <span class="meta-value">Feb 28 – Mar 16, 2026</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Location</span>
+              <span class="meta-value">Santiago, Chile 🇨🇱</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Format</span>
+              <span class="meta-value">Swiss Stage → Playoffs</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Prize Pool</span>
+              <span class="meta-value">$1,000,000</span>
+            </div>
+          </div>
+          <a href="match-center.html" class="btn btn-primary" style="margin-top:24px">
+            OPEN MATCH CENTER →
+          </a>
+        </div>
+        <div class="masters-scoreboard">
+          <div class="scoreboard-label">LIVE — SWISS STAGE DAY 1</div>
+          <!-- Match 1 -->
+          <div class="match-card-mini">
+            <div class="match-team">
+              <div class="team-logo-mini nrg-logo">NRG</div>
+              <span>NRG Esports</span>
+            </div>
+            <div class="match-score-mini">
+              <span class="score-a">10</span>
+              <span class="score-divider">:</span>
+              <span class="score-b">7</span>
+            </div>
+            <div class="match-team right">
+              <span>XLG</span>
+              <div class="team-logo-mini xlg-logo">XLG</div>
+            </div>
+            <div class="match-status live-badge">● LIVE</div>
+          </div>
+          <!-- Match 2 -->
+          <div class="match-card-mini">
+            <div class="match-team">
+              <div class="team-logo-mini edg-logo">EDG</div>
+              <span>EDward Gaming</span>
+            </div>
+            <div class="match-score-mini">
+              <span class="score-a">13</span>
+              <span class="score-divider">:</span>
+              <span class="score-b">8</span>
+            </div>
+            <div class="match-team right">
+              <span>M8</span>
+              <div class="team-logo-mini m8-logo">M8</div>
+            </div>
+            <div class="match-status complete-badge">✓ COMPLETE</div>
+          </div>
+          <a href="match-center.html" class="btn btn-outline btn-sm" style="width:100%;margin-top:12px">VIEW FULL BRACKET →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DIVIDER ── -->
+  <div class="container"><div class="divider"></div></div>
+
+  <!-- ── WHAT'S NEW IN PATCH 12.0 ── -->
+  <section class="section home-patch reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">🔧 Patch 12.0</span>
+        <h2>WHAT'S NEW</h2>
+      </div>
+      <div class="grid-3 patch-grid">
+        <div class="patch-card card reveal reveal-delay-1">
+          <div class="patch-card-icon" style="background:linear-gradient(135deg,#34d399,#059669)">🧬</div>
+          <div class="card-body">
+            <span class="tag tag-new">NEW AGENT</span>
+            <h3>VETO</h3>
+            <p>Senegalese Sentinel wielding Gravity Traps to lock down areas and pull enemies into devastating kill zones.</p>
+            <a href="agents.html?role=sentinel" class="btn btn-ghost btn-sm" style="margin-top:12px">View Agent →</a>
+          </div>
+        </div>
+        <div class="patch-card card reveal reveal-delay-2">
+          <div class="patch-card-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706)">🛸</div>
+          <div class="card-body">
+            <span class="tag tag-new">NEW AGENT</span>
+            <h3>TEJO</h3>
+            <p>Colombian Initiator deploying stealth drones to scout and mark targets with precision across the battlefield.</p>
+            <a href="agents.html?role=initiator" class="btn btn-ghost btn-sm" style="margin-top:12px">View Agent →</a>
+          </div>
+        </div>
+        <div class="patch-card card reveal reveal-delay-3">
+          <div class="patch-card-icon" style="background:linear-gradient(135deg,#ff4655,#c0392b)">🔫</div>
+          <div class="card-body">
+            <span class="tag tag-new">NEW WEAPON</span>
+            <h3>THE BANDIT</h3>
+            <p>600-credit burst pistol with high accuracy. Dominates the pistol round meta with its punchy 3-round burst fire.</p>
+            <a href="weapons.html?category=sidearms" class="btn btn-ghost btn-sm" style="margin-top:12px">View Weapon →</a>
+          </div>
+        </div>
+        <div class="patch-card card reveal reveal-delay-1">
+          <div class="patch-card-icon" style="background:linear-gradient(135deg,#60a5fa,#3b82f6)">🗺️</div>
+          <div class="card-body">
+            <span class="tag tag-new">NEW MAP</span>
+            <h3>CORRODE</h3>
+            <p>An industrial wasteland map set in Earth-2's decaying megacity. Features corrosive terrain hazards and tight corridors.</p>
+            <a href="maps.html" class="btn btn-ghost btn-sm" style="margin-top:12px">View Map →</a>
+          </div>
+        </div>
+        <div class="patch-card card reveal reveal-delay-2">
+          <div class="patch-card-icon" style="background:linear-gradient(135deg,#a78bfa,#7c3aed)">🔁</div>
+          <div class="card-body">
+            <span class="tag tag-yellow">REWORK</span>
+            <h3>BREEZE 2026</h3>
+            <p>Breeze returns with tighter mid-lane control, new cover points, and a complete visual overhaul set in 2026 lore.</p>
+            <a href="maps.html" class="btn btn-ghost btn-sm" style="margin-top:12px">View Map →</a>
+          </div>
+        </div>
+        <div class="patch-card card reveal reveal-delay-3">
+          <div class="patch-card-icon" style="background:linear-gradient(135deg,#fb923c,#ea580c)">⚖️</div>
+          <div class="card-body">
+            <span class="tag tag-yellow">BALANCE</span>
+            <h3>MAJOR CHANGES</h3>
+            <p>Jett Tailwind rework, Reyna Dismiss nerf, Operator cost increased to 4700, and Chamber Rendezvous overhaul.</p>
+            <a href="agents.html" class="btn btn-ghost btn-sm" style="margin-top:12px">See Full Notes →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── QUICK NAVIGATION ── -->
+  <section class="section home-quicknav reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Navigate</span>
+        <h2>EXPLORE THE PROTOCOL</h2>
+      </div>
+      <div class="quicknav-grid">
+        <a href="agents.html" class="quicknav-card">
+          <div class="quicknav-icon">🧬</div>
+          <h3>AGENTS</h3>
+          <p>All 22 agents including new additions Veto & Tejo</p>
+          <span class="quicknav-arrow">→</span>
+        </a>
+        <a href="weapons.html" class="quicknav-card">
+          <div class="quicknav-icon">🔫</div>
+          <h3>ARSENAL</h3>
+          <p>Complete weapon database with comparison tool</p>
+          <span class="quicknav-arrow">→</span>
+        </a>
+        <a href="maps.html" class="quicknav-card">
+          <div class="quicknav-icon">🗺️</div>
+          <h3>MAPS</h3>
+          <p>All 12 maps including the new Corrode</p>
+          <span class="quicknav-arrow">→</span>
+        </a>
+        <a href="match-center.html" class="quicknav-card">
+          <div class="quicknav-icon">🏆</div>
+          <h3>MATCH CENTER</h3>
+          <p>Live scores, Pick'Em, and Watch &amp; Earn drops</p>
+          <span class="quicknav-arrow">→</span>
+        </a>
+        <a href="architects.html" class="quicknav-card">
+          <div class="quicknav-icon">👨‍💻</div>
+          <h3>ARCHITECTS</h3>
+          <p>Meet the engineers behind Protocol 2026</p>
+          <span class="quicknav-arrow">→</span>
+        </a>
+        <a href="index.html" class="quicknav-card">
+          <div class="quicknav-icon">⚡</div>
+          <h3>FACTION SELECT</h3>
+          <p>Choose between Alpha and Omega protocols</p>
+          <span class="quicknav-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="js/global.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

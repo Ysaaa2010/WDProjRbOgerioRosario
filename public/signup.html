@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ====================================================
+       VALORANT PROTOCOL 2026 — signup.html
+       User registration page
+       Authors: Ysa Rosario & Nathan Ogerio
+       ==================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Create your VALORANT Protocol 2026 account — Join the protocol and choose your faction." />
+  <meta name="author" content="Ysa Rosario, Nathan Ogerio" />
+  <title>Sign Up — VALORANT PROTOCOL 2026</title>
+  <link rel="icon" type="image/png" href="assets/valorant.png" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+
+  <div id="loading-screen">
+    <img src="assets/valorant.png" alt="Valorant Logo" class="loading-logo" />
+    <div class="loading-bar-container"><div class="loading-bar"></div></div>
+    <p class="loading-text">INITIALIZING AUTH...</p>
+  </div>
+
+  <div id="navbar-placeholder"></div>
+
+  <div id="lore-overlay">
+    <h2>⚠ CLASSIFIED FOOTAGE ⚠</h2>
+    <div id="lore-video-container">
+      <div class="lore-icon">📡</div>
+      <p style="color:var(--primary);font-family:var(--font-mono);font-size:0.85rem">EARTH-2 TRANSMISSION INTERCEPTED</p>
+    </div>
+    <button id="lore-close">CLOSE TRANSMISSION</button>
+  </div>
+
+  <main class="auth-page">
+    <div class="auth-bg">
+      <div class="auth-bg-grid"></div>
+      <div class="auth-bg-glow"></div>
+    </div>
+
+    <div class="auth-container">
+      <div class="auth-card">
+
+        <div class="auth-logo">
+          <img src="assets/valorant.png" alt="Valorant" />
+          <span>PROTOCOL 2026</span>
+        </div>
+
+        <div class="auth-header">
+          <h1 class="auth-title">CREATE ACCOUNT</h1>
+          <p class="auth-subtitle">Join Protocol 2026. Choose your faction. Enter the breach.</p>
+        </div>
+
+        <div id="auth-message" class="auth-message" style="display:none"></div>
+
+        <div class="auth-fields">
+          <div class="field-group">
+            <label class="field-label" for="signup-username">USERNAME</label>
+            <div class="field-input-wrap">
+              <span class="field-icon">👤</span>
+              <input type="text" id="signup-username" class="field-input" placeholder="Choose a username" autocomplete="username" />
+            </div>
+            <div class="field-hint" id="username-hint"></div>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="signup-email">EMAIL ADDRESS</label>
+            <div class="field-input-wrap">
+              <span class="field-icon">✉️</span>
+              <input type="email" id="signup-email" class="field-input" placeholder="your@email.com" autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="signup-pass">PASSWORD</label>
+            <div class="field-input-wrap">
+              <span class="field-icon">🔒</span>
+              <input type="password" id="signup-pass" class="field-input" placeholder="Create a strong password" autocomplete="new-password" oninput="checkPasswordStrength(this.value)" />
+              <button class="toggle-pass" onclick="togglePass('signup-pass', this)" type="button">👁️</button>
+            </div>
+            <div class="password-strength" id="password-strength">
+              <div class="strength-bar"><div class="strength-fill" id="strength-fill"></div></div>
+              <span class="strength-label" id="strength-label">Enter a password</span>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="signup-confirm">CONFIRM PASSWORD</label>
+            <div class="field-input-wrap">
+              <span class="field-icon">🔒</span>
+              <input type="password" id="signup-confirm" class="field-input" placeholder="Repeat your password" autocomplete="new-password" />
+              <button class="toggle-pass" onclick="togglePass('signup-confirm', this)" type="button">👁️</button>
+            </div>
+          </div>
+
+          <!-- Faction Selection in Form -->
+          <div class="field-group">
+            <label class="field-label">CHOOSE YOUR FACTION</label>
+            <div class="faction-select-mini">
+              <div class="faction-mini-btn active" id="faction-alpha-btn" onclick="selectSignupFaction('alpha', this)" data-faction="alpha">
+                <span class="faction-mini-letter" style="color:#00c8d4">α</span>
+                <span>ALPHA</span>
+                <span class="faction-mini-sub">Earth-1 Defender</span>
+              </div>
+              <div class="faction-mini-btn" id="faction-omega-btn" onclick="selectSignupFaction('omega', this)" data-faction="omega">
+                <span class="faction-mini-letter" style="color:#ff4655">Ω</span>
+                <span>OMEGA</span>
+                <span class="faction-mini-sub">Earth-2 Invader</span>
+              </div>
+            </div>
+          </div>
+
+          <label class="checkbox-label" style="margin-top:8px">
+            <input type="checkbox" id="agree-terms" />
+            <span class="checkbox-custom"></span>
+            <span style="font-size:0.82rem">I agree to the <a href="#" class="auth-link">Terms of Service</a> and <a href="#" class="auth-link">Privacy Policy</a></span>
+          </label>
+        </div>
+
+        <button class="btn btn-primary auth-submit" id="signup-btn" onclick="handleSignUp()">
+          CREATE ACCOUNT
+        </button>
+
+        <div class="auth-divider"><span>OR SIGN UP WITH</span></div>
+
+        <div class="auth-social">
+          <button class="btn btn-ghost auth-social-btn" onclick="socialLogin('Google')">🌐 Google</button>
+          <button class="btn btn-ghost auth-social-btn" onclick="socialLogin('Discord')">💬 Discord</button>
+        </div>
+
+        <p class="auth-redirect">
+          Already have an account?
+          <a href="signin.html" class="auth-link">Sign in →</a>
+        </p>
+
+      </div>
+
+      <div class="auth-side">
+        <div class="auth-side-content">
+          <div class="auth-side-icon">⚡</div>
+          <h3>JOIN THE PROTOCOL</h3>
+          <p>Create your free account and become part of the 2026 tactical community.</p>
+          <ul class="auth-perks">
+            <li><span>🏆</span> Enter Pick'Em competitions</li>
+            <li><span>🎁</span> Earn exclusive drop rewards</li>
+            <li><span>🔫</span> Track your favourite agents</li>
+            <li><span>🌐</span> Connect with the community</li>
+          </ul>
+          <div class="auth-side-badge">
+            <span>FREE TO JOIN</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/global.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

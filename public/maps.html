@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ====================================================
+       VALORANT PROTOCOL 2026 — maps.html
+       All 12 maps including Corrode and Breeze 2026 rework
+       Authors: Ysa Rosario & Nathan Ogerio
+       ==================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="VALORANT Protocol 2026 Maps — All 12 maps including the new Corrode and Breeze 2026 rework." />
+  <meta name="keywords" content="Valorant maps, Ascent, Bind, Corrode, Breeze, Lotus, Haven" />
+  <meta name="author" content="Ysa Rosario, Nathan Ogerio" />
+  <title>Maps — VALORANT PROTOCOL 2026</title>
+  <link rel="icon" type="image/png" href="assets/valorant.png" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/maps.css" />
+</head>
+<body>
+
+  <div id="loading-screen">
+    <img src="assets/valorant.png" alt="Valorant Logo" class="loading-logo" />
+    <div class="loading-bar-container"><div class="loading-bar"></div></div>
+    <p class="loading-text">LOADING MAP DATA...</p>
+  </div>
+
+  <div id="navbar-placeholder"></div>
+
+  <div id="lore-overlay">
+    <h2>⚠ CLASSIFIED FOOTAGE ⚠</h2>
+    <div id="lore-video-container">
+      <div class="lore-icon">📡</div>
+      <p style="color:var(--primary);font-family:var(--font-mono);font-size:0.85rem">EARTH-2 TRANSMISSION INTERCEPTED</p>
+    </div>
+    <button id="lore-close">CLOSE TRANSMISSION</button>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="page-hero maps-hero">
+    <div class="page-hero-title">
+      <span class="section-label">Patch 12.0 — 12 Maps</span>
+      <h1 class="display-lg">MAP POOL</h1>
+    </div>
+    <p class="page-hero-subtitle">From Earth-1 rooftops to Earth-2 wastelands. Know every site.</p>
+  </section>
+
+  <!-- ── MAP GRID ── -->
+  <main class="section maps-main">
+    <div class="container">
+      <div id="maps-grid" class="maps-grid"></div>
+    </div>
+  </main>
+
+  <!-- ── MAP MODAL ── -->
+  <div id="map-modal" class="agent-modal">
+    <div class="agent-modal-backdrop" onclick="closeMapModal()"></div>
+    <div class="agent-modal-content" style="max-width:800px">
+      <button class="modal-close" onclick="closeMapModal()">✕</button>
+      <div id="map-modal-body"></div>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/global.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/maps.js"></script>
+</body>
+</html>

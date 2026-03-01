@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ====================================================
+       VALORANT PROTOCOL 2026 — index.html (Faction Select)
+       Authors: Ysa Rosario & Nathan Ogerio
+       ==================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="VALORANT Protocol 2026: The Omega Breach — Choose your faction and enter the battlefield." />
+  <meta name="keywords" content="Valorant, 2026, Alpha, Omega, Faction, Esports" />
+  <meta name="author" content="Ysa Rosario, Nathan Ogerio" />
+  <meta property="og:title" content="VALORANT PROTOCOL 2026: THE OMEGA BREACH" />
+  <meta property="og:description" content="Choose your faction. Alpha or Omega. The breach begins." />
+  <meta property="og:type" content="website" />
+  <title>VALORANT PROTOCOL 2026 — Choose Your Faction</title>
+  <link rel="icon" type="image/png" href="assets/valorant.png" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+
+  <!-- ── Loading Screen ── -->
+  <div id="loading-screen">
+    <img src="assets/valorant.png" alt="Valorant Logo" class="loading-logo" />
+    <div class="loading-bar-container"><div class="loading-bar"></div></div>
+    <p class="loading-text">INITIALIZING PROTOCOL...</p>
+  </div>
+
+  <!-- ── Lore Easter Egg Overlay ── -->
+  <div id="lore-overlay">
+    <h2>⚠ CLASSIFIED FOOTAGE ⚠</h2>
+    <div id="lore-video-container">
+      <div class="lore-icon">📡</div>
+      <p style="color:var(--primary);font-family:var(--font-mono);font-size:0.85rem;letter-spacing:0.1em">EARTH-2 TRANSMISSION INTERCEPTED</p>
+      <p style="font-size:0.85rem;color:rgba(255,255,255,0.6);margin-top:8px">Welcome to My World — 2026 Omega Breach Cinematic</p>
+      <p style="font-size:0.75rem;color:rgba(255,255,255,0.4);margin-top:16px;font-style:italic">"They came from our world. Now they want ours."</p>
+      <br/>
+      <p style="font-family:var(--font-mono);font-size:0.7rem;color:rgba(255,255,255,0.3)">Type 'riot' again to close this transmission</p>
+    </div>
+    <button id="lore-close">CLOSE TRANSMISSION</button>
+  </div>
+
+  <!-- ── Main Faction Selection ── -->
+  <main class="faction-select-page">
+    <!-- Background grid -->
+    <div class="bg-grid"></div>
+    <div class="bg-scanlines"></div>
+
+    <!-- Header -->
+    <header class="faction-header">
+      <img src="assets/valorant.png" alt="Valorant" class="faction-logo" />
+      <div class="faction-tagline">PROTOCOL 2026</div>
+      <h1 class="faction-title">THE OMEGA BREACH</h1>
+      <p class="faction-subtitle">Earth-1 and Earth-2 stand at the edge of annihilation.<br/>Choose your allegiance. The breach begins now.</p>
+    </header>
+
+    <!-- Faction Cards -->
+    <div class="faction-cards">
+
+      <!-- Alpha -->
+      <div class="faction-card faction-alpha" id="card-alpha" onclick="selectFaction('alpha')">
+        <div class="faction-card-bg"></div>
+        <div class="faction-card-glow"></div>
+        <div class="faction-card-inner">
+          <div class="faction-emblem">
+            <div class="faction-emblem-ring"></div>
+            <span class="faction-emblem-letter">α</span>
+          </div>
+          <h2 class="faction-card-name">ALPHA</h2>
+          <div class="faction-card-origin">EARTH-1 PROTOCOL</div>
+          <p class="faction-card-lore">Defenders of the original world. Teal-coded agents sworn to protect humanity's home dimension from transdimensional invasion.</p>
+          <div class="faction-card-stats">
+            <div class="fstat"><span class="fstat-label">Color</span><span class="fstat-value alpha-text">Teal / Cyan</span></div>
+            <div class="fstat"><span class="fstat-label">Origin</span><span class="fstat-value">Earth-1</span></div>
+            <div class="fstat"><span class="fstat-label">Role</span><span class="fstat-value">Defender</span></div>
+          </div>
+          <button class="faction-select-btn faction-btn-alpha">
+            CHOOSE ALPHA
+          </button>
+        </div>
+      </div>
+
+      <!-- VS Divider -->
+      <div class="vs-divider">
+        <div class="vs-line"></div>
+        <span class="vs-text">VS</span>
+        <div class="vs-line"></div>
+      </div>
+
+      <!-- Omega -->
+      <div class="faction-card faction-omega" id="card-omega" onclick="selectFaction('omega')">
+        <div class="faction-card-bg"></div>
+        <div class="faction-card-glow"></div>
+        <div class="faction-card-inner">
+          <div class="faction-emblem omega-emblem">
+            <div class="faction-emblem-ring"></div>
+            <span class="faction-emblem-letter">Ω</span>
+          </div>
+          <h2 class="faction-card-name">OMEGA</h2>
+          <div class="faction-card-origin">EARTH-2 PROTOCOL</div>
+          <p class="faction-card-lore">Conquerors from the mirror world. Red-coded agents wielding Radianite to reshape reality itself and reclaim what they believe is rightfully theirs.</p>
+          <div class="faction-card-stats">
+            <div class="fstat"><span class="fstat-label">Color</span><span class="fstat-value omega-text">Red / Orange</span></div>
+            <div class="fstat"><span class="fstat-label">Origin</span><span class="fstat-value">Earth-2</span></div>
+            <div class="fstat"><span class="fstat-label">Role</span><span class="fstat-value">Invader</span></div>
+          </div>
+          <button class="faction-select-btn faction-btn-omega">
+            CHOOSE OMEGA
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Easter Egg Hint -->
+    <div class="faction-hint">
+      <span class="faction-hint-text">▸ DEVELOPER HINT: Type <kbd>riot</kbd> to access classified lore</span>
+    </div>
+
+    <!-- Footer Mini -->
+    <footer class="faction-footer">
+      <p>&copy; 2026 @NathanOgerioYsaRosario. Rights Reserved. | <span>Not Affiliated with Riot Games.</span></p>
+    </footer>
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/global.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ====================================================
+       VALORANT PROTOCOL 2026 — signin.html
+       User Sign In page
+       Authors: Ysa Rosario & Nathan Ogerio
+       ==================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sign in to VALORANT Protocol 2026 — Access your picks, drops progress, and personalized faction settings." />
+  <meta name="author" content="Ysa Rosario, Nathan Ogerio" />
+  <title>Sign In — VALORANT PROTOCOL 2026</title>
+  <link rel="icon" type="image/png" href="assets/valorant.png" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+
+  <div id="loading-screen">
+    <img src="assets/valorant.png" alt="Valorant Logo" class="loading-logo" />
+    <div class="loading-bar-container"><div class="loading-bar"></div></div>
+    <p class="loading-text">INITIALIZING AUTH...</p>
+  </div>
+
+  <div id="navbar-placeholder"></div>
+
+  <div id="lore-overlay">
+    <h2>⚠ CLASSIFIED FOOTAGE ⚠</h2>
+    <div id="lore-video-container">
+      <div class="lore-icon">📡</div>
+      <p style="color:var(--primary);font-family:var(--font-mono);font-size:0.85rem">EARTH-2 TRANSMISSION INTERCEPTED</p>
+    </div>
+    <button id="lore-close">CLOSE TRANSMISSION</button>
+  </div>
+
+  <!-- ── MAIN ── -->
+  <main class="auth-page">
+    <div class="auth-bg">
+      <div class="auth-bg-grid"></div>
+      <div class="auth-bg-glow"></div>
+    </div>
+
+    <div class="auth-container">
+      <div class="auth-card">
+
+        <!-- Logo -->
+        <div class="auth-logo">
+          <img src="assets/valorant.png" alt="Valorant" />
+          <span>PROTOCOL 2026</span>
+        </div>
+
+        <!-- Header -->
+        <div class="auth-header">
+          <h1 class="auth-title">SIGN IN</h1>
+          <p class="auth-subtitle">Access your faction, picks, and drops progress.</p>
+        </div>
+
+        <!-- Error / Success Messages -->
+        <div id="auth-message" class="auth-message" style="display:none"></div>
+
+        <!-- Form Fields (no form tag — using divs with JS handlers) -->
+        <div class="auth-fields">
+          <div class="field-group">
+            <label class="field-label" for="signin-user">USERNAME OR EMAIL</label>
+            <div class="field-input-wrap">
+              <span class="field-icon">👤</span>
+              <input
+                type="text" id="signin-user" class="field-input"
+                placeholder="Enter your username or email"
+                autocomplete="username"
+              />
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="signin-pass">PASSWORD</label>
+            <div class="field-input-wrap">
+              <span class="field-icon">🔒</span>
+              <input
+                type="password" id="signin-pass" class="field-input"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+              />
+              <button class="toggle-pass" onclick="togglePass('signin-pass', this)" type="button">👁️</button>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <label class="checkbox-label">
+              <input type="checkbox" id="remember-me" />
+              <span class="checkbox-custom"></span>
+              <span>Remember me</span>
+            </label>
+            <a href="#" class="forgot-link" onclick="forgotPassword()">Forgot password?</a>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <button class="btn btn-primary auth-submit" id="signin-btn" onclick="handleSignIn()">
+          SIGN IN
+        </button>
+
+        <!-- Divider -->
+        <div class="auth-divider"><span>OR CONTINUE WITH</span></div>
+
+        <!-- Social Buttons -->
+        <div class="auth-social">
+          <button class="btn btn-ghost auth-social-btn" onclick="socialLogin('Google')">
+            🌐 Google
+          </button>
+          <button class="btn btn-ghost auth-social-btn" onclick="socialLogin('Discord')">
+            💬 Discord
+          </button>
+        </div>
+
+        <!-- Redirect -->
+        <p class="auth-redirect">
+          Don't have an account?
+          <a href="signup.html" class="auth-link">Create one →</a>
+        </p>
+
+      </div>
+
+      <!-- Side Info -->
+      <div class="auth-side">
+        <div class="auth-side-content">
+          <div class="auth-side-icon">🎮</div>
+          <h3>YOUR TACTICAL HUB</h3>
+          <p>Sign in to unlock your full Protocol 2026 experience.</p>
+          <ul class="auth-perks">
+            <li><span>🎯</span> Save Pick'Em predictions</li>
+            <li><span>🎁</span> Track Watch &amp; Earn drops</li>
+            <li><span>⚡</span> Keep your faction choice</li>
+            <li><span>📊</span> Access personal stats</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/global.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ====================================================
+       VALORANT PROTOCOL 2026 — architects.html
+       The Engineers Behind Protocol 2026
+       Authors: Ysa Rosario & Nathan Ogerio
+       ==================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Meet Ysa Rosario and Nathan Ogerio — the architects behind VALORANT Protocol 2026." />
+  <meta name="keywords" content="Ysa Rosario, Nathan Ogerio, web developers, Valorant Protocol 2026" />
+  <meta name="author" content="Ysa Rosario, Nathan Ogerio" />
+  <title>The Architects — VALORANT PROTOCOL 2026</title>
+  <link rel="icon" type="image/png" href="assets/valorant.png" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/architects.css" />
+  <!-- Chart.js for radar charts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <div id="loading-screen">
+    <img src="assets/valorant.png" alt="Valorant Logo" class="loading-logo" />
+    <div class="loading-bar-container"><div class="loading-bar"></div></div>
+    <p class="loading-text">LOADING AGENT FILES...</p>
+  </div>
+
+  <div id="navbar-placeholder"></div>
+
+  <div id="lore-overlay">
+    <h2>⚠ CLASSIFIED FOOTAGE ⚠</h2>
+    <div id="lore-video-container">
+      <div class="lore-icon">📡</div>
+      <p style="color:var(--primary);font-family:var(--font-mono);font-size:0.85rem">EARTH-2 TRANSMISSION INTERCEPTED</p>
+    </div>
+    <button id="lore-close">CLOSE TRANSMISSION</button>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="page-hero architects-hero">
+    <div class="page-hero-title">
+      <span class="section-label">🛠️ The Engineers</span>
+      <h1 class="display-lg">THE ARCHITECTS</h1>
+    </div>
+    <p class="page-hero-subtitle">The protocol engineers behind VALORANT Protocol 2026.<br/>Quezon City City, NCR · Philippines 🇵🇭</p>
+  </section>
+
+  <!-- ── DEV TERMINAL ── -->
+  <section class="section terminal-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Dev Terminal</span>
+        <h2>SYSTEM LOG</h2>
+      </div>
+      <div class="dev-terminal reveal">
+        <div class="terminal-titlebar">
+          <div class="terminal-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <span class="terminal-title">protocol-2026 — bash</span>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+          <div class="terminal-prompt"><span class="prompt-path">~/protocol-2026</span><span class="prompt-symbol">$</span> <span class="prompt-cmd">cat architects.log</span></div>
+          <div class="terminal-output" id="terminal-output"></div>
+          <div class="terminal-cursor" id="terminal-cursor">█</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ARCHITECT PROFILES ── -->
+  <section class="section architects-section">
+    <div class="container">
+      <div class="architects-grid">
+
+        <!-- ── YSA ROSARIO ── -->
+        <div class="architect-card reveal" id="card-ysa">
+          <div class="architect-card-top">
+            <div class="architect-photo-wrap">
+              <div class="architect-photo" id="photo-ysa">
+                <img src="assets/ysa.jpg" alt="Ysa Rosario"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                <div class="photo-placeholder" style="display:none">
+                  <div class="photo-initial"><span>Y</span></div>
+                  <span class="photo-label">YSA R.</span>
+                </div>
+              </div>
+              <div class="architect-status-dot"></div>
+            </div>
+            <div class="architect-identity">
+              <div class="architect-codename">AGENT: YSA</div>
+              <h2 class="architect-name">YSA ROSARIO</h2>
+              <div class="architect-title">Frontend Engineer &amp; UI Architect</div>
+              <div class="architect-origin">🇵🇭 Dagupan City, Philippines</div>
+              <a href="https://www.instagram.com/jiw2ng/" target="_blank" rel="noopener" class="architect-social">
+                <span>📸</span> @jiw2ng
+              </a>
+            </div>
+          </div>
+
+          <div class="architect-bio" id="bio-ysa">
+            <!-- Filled by typewriter JS -->
+          </div>
+
+          <div class="architect-skills">
+            <div class="skills-label">SKILL MATRIX</div>
+            <canvas class="skill-radar" id="radar-ysa" width="260" height="260"></canvas>
+          </div>
+
+          <div class="architect-tags">
+            <span class="tag tag-primary">HTML5</span>
+            <span class="tag tag-blue">CSS3</span>
+            <span class="tag tag-yellow">JavaScript</span>
+            <span class="tag tag-green">UI/UX Design</span>
+            <span class="tag tag-new">Valorant Fan</span>
+          </div>
+
+          <a href="https://www.instagram.com/jiw2ng/" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:16px;width:100%">
+            📸 Follow on Instagram
+          </a>
+        </div>
+
+        <!-- ── NATHAN OGERIO ── -->
+        <div class="architect-card reveal reveal-delay-2" id="card-nathan">
+          <div class="architect-card-top">
+            <div class="architect-photo-wrap">
+              <div class="architect-photo" id="photo-nathan">
+                <img src="assets/nathan.png" alt="Nathan Ogerio"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                <div class="photo-placeholder" style="display:none">
+                  <div class="photo-initial"><span>N</span></div>
+                  <span class="photo-label">NATHAN O.</span>
+                </div>
+              </div>
+              <div class="architect-status-dot"></div>
+            </div>
+            <div class="architect-identity">
+              <div class="architect-codename">AGENT: NATHAN</div>
+              <h2 class="architect-name">NATHAN OGERIO</h2>
+              <div class="architect-title">Backend Logic &amp; Systems Engineer</div>
+              <div class="architect-origin">🇵🇭 Quezon City, Philippines</div>
+              <a href="https://www.instagram.com/oregaknows/" target="_blank" rel="noopener" class="architect-social">
+                <span>📸</span> @oregaknows
+              </a>
+            </div>
+          </div>
+
+          <div class="architect-bio" id="bio-nathan">
+            <!-- Filled by typewriter JS -->
+          </div>
+
+          <div class="architect-skills">
+            <div class="skills-label">SKILL MATRIX</div>
+            <canvas class="skill-radar" id="radar-nathan" width="260" height="260"></canvas>
+          </div>
+
+          <div class="architect-tags">
+            <span class="tag tag-primary">HTML5</span>
+            <span class="tag tag-blue">CSS3</span>
+            <span class="tag tag-yellow">JavaScript</span>
+            <span class="tag tag-green">Logic Systems</span>
+            <span class="tag tag-new">Valorant Fan</span>
+          </div>
+
+          <a href="https://www.instagram.com/oregaknows/" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:16px;width:100%">
+            📸 Follow on Instagram
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DISCORD / COMMS ── -->
+  <section class="section comms-section reveal">
+    <div class="container">
+      <div class="comms-card">
+        <div class="comms-icon">📡</div>
+        <div class="comms-info">
+          <h3>RADIO COMMS</h3>
+          <p>Join the Protocol 2026 community. Coordinate strats, share picks, and stay updated.</p>
+        </div>
+        <button class="btn btn-primary btn-lg" onclick="joinComms()">JOIN DISCORD SERVER →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CREDITS ── -->
+  <section class="section credits-section reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Credits</span>
+        <h2>BUILT WITH</h2>
+      </div>
+      <div class="credits-grid">
+        <div class="credit-item"><span class="ci-icon">🌐</span><span class="ci-label">HTML5</span></div>
+        <div class="credit-item"><span class="ci-icon">🎨</span><span class="ci-label">CSS3</span></div>
+        <div class="credit-item"><span class="ci-icon">⚡</span><span class="ci-label">Vanilla JS</span></div>
+        <div class="credit-item"><span class="ci-icon">📊</span><span class="ci-label">Chart.js</span></div>
+        <div class="credit-item"><span class="ci-icon">🔤</span><span class="ci-label">Google Fonts</span></div>
+        <div class="credit-item"><span class="ci-icon">🎮</span><span class="ci-label">Valorant Lore</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/global.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/architects.js"></script>
+</body>
+</html>

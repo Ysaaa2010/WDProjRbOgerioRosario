@@ -1,0 +1,363 @@
+/* ============================================================
+   VALORANT PROTOCOL 2026 — architects.css
+   The Architects page styles
+   Authors: Ysa Rosario & Nathan Ogerio
+   ============================================================ */
+
+/* ── Terminal ── */
+.terminal-section { background: var(--bg-panel); }
+
+.dev-terminal {
+  background: #0a0a0a;
+  border: 1px solid rgba(255,70,85,0.3);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(255,70,85,0.08);
+  max-width: 800px;
+}
+[data-faction="alpha"] .dev-terminal { border-color: rgba(0,200,212,0.3); box-shadow: 0 0 40px rgba(0,200,212,0.08); }
+
+.terminal-titlebar {
+  background: #1a1a1a;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.terminal-dots { display: flex; gap: 6px; }
+.dot {
+  width: 12px; height: 12px; border-radius: 50%;
+}
+.dot.red    { background: #ff5f57; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green  { background: #28c840; }
+
+.terminal-title {
+  flex: 1; text-align: center;
+  font-family: var(--font-mono); font-size: 0.75rem;
+  color: rgba(255,255,255,0.4); letter-spacing: 0.1em;
+}
+
+.terminal-body {
+  padding: 20px 24px;
+  min-height: 220px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+.terminal-prompt {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
+}
+.prompt-path   { color: #4ade80; }
+.prompt-symbol { color: #fff; }
+.prompt-cmd    { color: #60a5fa; }
+
+.terminal-output { color: rgba(255,255,255,0.75); }
+.terminal-output .t-line { display: block; }
+.terminal-output .t-label { color: var(--primary); font-weight: bold; }
+.terminal-output .t-val   { color: #fff; }
+.terminal-output .t-comment { color: #4ade80; }
+.terminal-output .t-dim { color: rgba(255,255,255,0.3); }
+
+.terminal-cursor {
+  color: var(--primary);
+  animation: cursor-blink 1s step-end infinite;
+  display: inline-block;
+  margin-top: 4px;
+}
+@keyframes cursor-blink { 50% { opacity: 0; } }
+
+/* ── Architects Grid ── */
+.architects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+/* ── Architect Card ── */
+.architect-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.architect-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--faction-gradient);
+}
+
+.architect-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 16px 60px rgba(0,0,0,0.5), 0 0 30px var(--primary-glow);
+  transform: translateY(-4px);
+}
+
+/* ── Card Top ── */
+.architect-card-top {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.architect-photo-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.architect-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid var(--primary);
+  box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.architect-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-placeholder {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-panel);
+}
+/* Diagonal hatch background */
+.photo-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0px, transparent 5px,
+    rgba(255,255,255,0.025) 5px, rgba(255,255,255,0.025) 6px
+  );
+}
+/* Radial glow */
+.photo-placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 90% 80% at 50% 50%, var(--primary-glow), transparent 70%);
+}
+/* Initial circle */
+.photo-initial {
+  position: relative;
+  z-index: 2;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.4);
+  box-shadow: 0 0 20px var(--primary-glow);
+}
+.photo-initial span {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--primary);
+  line-height: 1;
+}
+/* Faded full name in background */
+.photo-label {
+  position: absolute;
+  bottom: 8px;
+  left: 0; right: 0;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.15em;
+  z-index: 2;
+  text-transform: uppercase;
+}
+
+.architect-status-dot {
+  position: absolute;
+  bottom: 4px; right: 4px;
+  width: 12px; height: 12px;
+  background: #4ade80;
+  border-radius: 50%;
+  border: 2px solid var(--bg-card);
+  animation: live-pulse 2s ease infinite;
+}
+
+.architect-identity {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.architect-codename {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--primary);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.architect-name {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.architect-title {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.architect-origin {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.architect-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--primary);
+  transition: color var(--transition);
+}
+.architect-social:hover { color: var(--primary-light); }
+
+/* ── Bio ── */
+.architect-bio {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  min-height: 80px;
+  font-family: var(--font-body);
+}
+
+.bio-cursor {
+  color: var(--primary);
+  animation: cursor-blink 1s step-end infinite;
+}
+
+/* ── Skills Radar ── */
+.architect-skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.skills-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.skill-radar {
+  max-width: 260px;
+}
+
+/* ── Tags ── */
+.architect-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ── Comms Section ── */
+.comms-section { background: var(--bg-panel); }
+
+.comms-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 36px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  position: relative;
+  overflow: hidden;
+}
+.comms-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--faction-gradient);
+  opacity: 0.04;
+}
+
+.comms-icon { font-size: 3.5rem; flex-shrink: 0; position: relative; z-index: 1; }
+.comms-info { flex: 1; position: relative; z-index: 1; }
+.comms-info h3 {
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+.comms-info p { color: var(--text-secondary); }
+.comms-card .btn { flex-shrink: 0; position: relative; z-index: 1; }
+
+/* ── Credits ── */
+.credits-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.credit-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition);
+  cursor: default;
+}
+.credit-item:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+.ci-icon  { font-size: 1.4rem; }
+.ci-label { font-family: var(--font-display); font-size: 1rem; font-weight: 700; }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .architects-grid { grid-template-columns: 1fr; }
+  .comms-card { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .architect-card-top { flex-direction: column; align-items: center; text-align: center; }
+  .architect-identity { align-items: center; }
+  .architect-social { justify-content: center; }
+}

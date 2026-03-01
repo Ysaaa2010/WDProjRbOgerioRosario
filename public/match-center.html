@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ====================================================
+       VALORANT PROTOCOL 2026 — match-center.html
+       Masters Santiago 2026 Live Hub: Scores, Pick'Em, Drops
+       Authors: Ysa Rosario & Nathan Ogerio
+       ==================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Masters Santiago 2026 Live Match Center — live scores, Pick'Em bracket, and Watch & Earn drops." />
+  <meta name="keywords" content="Valorant esports, Masters Santiago 2026, VCT, live scores, Pick'Em" />
+  <meta name="author" content="Ysa Rosario, Nathan Ogerio" />
+  <title>Match Center — VALORANT PROTOCOL 2026</title>
+  <link rel="icon" type="image/png" href="assets/valorant.png" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/match-center.css" />
+</head>
+<body>
+
+  <div id="loading-screen">
+    <img src="assets/valorant.png" alt="Valorant Logo" class="loading-logo" />
+    <div class="loading-bar-container"><div class="loading-bar"></div></div>
+    <p class="loading-text">CONNECTING TO LIVE FEED...</p>
+  </div>
+
+  <div id="navbar-placeholder"></div>
+
+  <div id="lore-overlay">
+    <h2>⚠ CLASSIFIED FOOTAGE ⚠</h2>
+    <div id="lore-video-container">
+      <div class="lore-icon">📡</div>
+      <p style="color:var(--primary);font-family:var(--font-mono);font-size:0.85rem">EARTH-2 TRANSMISSION INTERCEPTED</p>
+    </div>
+    <button id="lore-close">CLOSE TRANSMISSION</button>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="page-hero mc-hero">
+    <div class="mc-hero-eyebrow">
+      <span class="hero-live-dot"></span>
+      <span>LIVE — FEB 28, 2026</span>
+    </div>
+    <div class="page-hero-title">
+      <span class="section-label">🏆 VCT 2026</span>
+      <h1 class="display-lg">MASTERS SANTIAGO</h1>
+    </div>
+    <p class="page-hero-subtitle">Santiago, Chile 🇨🇱 · Swiss Stage Day 1 · $1,000,000 Prize Pool</p>
+    <div class="mc-hero-meta">
+      <div class="mc-meta-item"><span class="mc-meta-label">Format</span><span class="mc-meta-val">Swiss Stage → Playoffs</span></div>
+      <div class="mc-meta-item"><span class="mc-meta-label">Teams</span><span class="mc-meta-val">16 International</span></div>
+      <div class="mc-meta-item"><span class="mc-meta-label">Dates</span><span class="mc-meta-val">Feb 28 – Mar 16</span></div>
+      <div class="mc-meta-item"><span class="mc-meta-label">Prize Pool</span><span class="mc-meta-val" style="color:#facc15">$1,000,000</span></div>
+    </div>
+  </section>
+
+  <!-- ── TABS ── -->
+  <div class="section mc-section">
+    <div class="container">
+      <div class="tab-bar">
+        <button class="tab-btn active" onclick="switchTab('scores', this)">📊 LIVE SCORES</button>
+        <button class="tab-btn" onclick="switchTab('pickem', this)">🎯 PICK'EM</button>
+        <button class="tab-btn" onclick="switchTab('drops', this)">🎁 WATCH &amp; EARN</button>
+        <button class="tab-btn" onclick="switchTab('bracket', this)">🏆 BRACKET</button>
+      </div>
+
+      <!-- ── TAB: LIVE SCORES ── -->
+      <div class="tab-panel active" id="tab-scores">
+        <div class="scores-layout">
+
+          <!-- Today's Matches -->
+          <div class="matches-col">
+            <div class="matches-date-label">📅 FEB 28, 2026 — SWISS STAGE R1</div>
+
+            <!-- Match 1 — LIVE -->
+            <div class="match-block live-match">
+              <div class="match-block-header">
+                <span class="live-badge-lg">● LIVE</span>
+                <span class="match-stage">Swiss Stage · Round 1</span>
+                <span class="match-map-label" id="live-map">MAP 2 · ASCENT</span>
+              </div>
+              <div class="match-teams-row">
+                <div class="match-team-block">
+                  <div class="team-logo-lg nrg-logo-lg">NRG</div>
+                  <div class="team-name-lg">NRG ESPORTS</div>
+                  <div class="team-region">Americas</div>
+                </div>
+                <div class="live-scores-center">
+                  <div class="live-score-wrap">
+                    <span class="live-score-num" id="score-nrg">10</span>
+                    <span class="live-score-sep">:</span>
+                    <span class="live-score-num" id="score-xlg">7</span>
+                  </div>
+                  <div class="map-scores" id="map-scores">
+                    <span class="ms won">13-5</span>
+                    <span class="ms current">▶</span>
+                  </div>
+                  <div class="live-timer" id="live-timer">ONGOING</div>
+                </div>
+                <div class="match-team-block right">
+                  <div class="team-logo-lg xlg-logo-lg">XLG</div>
+                  <div class="team-name-lg">XLG</div>
+                  <div class="team-region">EMEA</div>
+                </div>
+              </div>
+              <div class="match-block-footer">
+                <button class="btn btn-primary btn-sm" onclick="showToast('Stream launching...','📺')">WATCH LIVE</button>
+                <button class="btn btn-ghost btn-sm" onclick="showToast('Stats loaded','📊')">STATS</button>
+              </div>
+            </div>
+
+            <!-- Match 2 — COMPLETED -->
+            <div class="match-block done-match">
+              <div class="match-block-header">
+                <span class="done-badge">✓ COMPLETE</span>
+                <span class="match-stage">Swiss Stage · Round 1</span>
+                <span class="match-map-label">BO3 COMPLETE</span>
+              </div>
+              <div class="match-teams-row">
+                <div class="match-team-block">
+                  <div class="team-logo-lg edg-logo-lg">EDG</div>
+                  <div class="team-name-lg">EDWARD GAMING</div>
+                  <div class="team-region">Pacific</div>
+                </div>
+                <div class="live-scores-center">
+                  <div class="live-score-wrap won">
+                    <span class="live-score-num won-num">2</span>
+                    <span class="live-score-sep">:</span>
+                    <span class="live-score-num lost-num">1</span>
+                  </div>
+                  <div class="map-scores">
+                    <span class="ms won">13-8</span>
+                    <span class="ms lost">9-13</span>
+                    <span class="ms won">13-7</span>
+                  </div>
+                  <div class="winner-label">EDG WIN</div>
+                </div>
+                <div class="match-team-block right">
+                  <div class="team-logo-lg m8-logo-lg">M8</div>
+                  <div class="team-name-lg">MIBR</div>
+                  <div class="team-region">Americas</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Match 3 — UPCOMING -->
+            <div class="match-block upcoming-match">
+              <div class="match-block-header">
+                <span class="upcoming-badge">🕐 UP NEXT</span>
+                <span class="match-stage">Swiss Stage · Round 1</span>
+                <span class="match-map-label">~17:00 CLT</span>
+              </div>
+              <div class="match-teams-row">
+                <div class="match-team-block">
+                  <div class="team-logo-lg" style="background:linear-gradient(135deg,#1e1640,#0d0a28);border:1px solid #818cf8;color:#818cf8">FNC</div>
+                  <div class="team-name-lg">FNATIC</div>
+                  <div class="team-region">EMEA</div>
+                </div>
+                <div class="live-scores-center">
+                  <div class="live-score-wrap">
+                    <span class="live-score-num upcoming-num">-</span>
+                    <span class="live-score-sep">:</span>
+                    <span class="live-score-num upcoming-num">-</span>
+                  </div>
+                  <div class="live-timer">17:00 CLT</div>
+                </div>
+                <div class="match-team-block right">
+                  <div class="team-logo-lg" style="background:linear-gradient(135deg,#1a2e1a,#0d1a0d);border:1px solid #4ade80;color:#4ade80">SEN</div>
+                  <div class="team-name-lg">SENTINELS</div>
+                  <div class="team-region">Americas</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Match 4 — UPCOMING -->
+            <div class="match-block upcoming-match">
+              <div class="match-block-header">
+                <span class="upcoming-badge">🕐 UPCOMING</span>
+                <span class="match-stage">Swiss Stage · Round 1</span>
+                <span class="match-map-label">~19:00 CLT</span>
+              </div>
+              <div class="match-teams-row">
+                <div class="match-team-block">
+                  <div class="team-logo-lg" style="background:linear-gradient(135deg,#1f1810,#120e08);border:1px solid #fb923c;color:#fb923c">PRX</div>
+                  <div class="team-name-lg">PAPER REX</div>
+                  <div class="team-region">Pacific</div>
+                </div>
+                <div class="live-scores-center">
+                  <div class="live-score-wrap">
+                    <span class="live-score-num upcoming-num">-</span>
+                    <span class="live-score-sep">:</span>
+                    <span class="live-score-num upcoming-num">-</span>
+                  </div>
+                  <div class="live-timer">19:00 CLT</div>
+                </div>
+                <div class="match-team-block right">
+                  <div class="team-logo-lg" style="background:linear-gradient(135deg,#1a1a2e,#0d0d1e);border:1px solid #60a5fa;color:#60a5fa">C9</div>
+                  <div class="team-name-lg">CLOUD9</div>
+                  <div class="team-region">Americas</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Standings Sidebar -->
+          <div class="standings-sidebar">
+            <h3 class="sidebar-title">SWISS STANDINGS</h3>
+            <div class="standings-table">
+              <div class="standings-header">
+                <span>#</span><span>TEAM</span><span>W</span><span>L</span>
+              </div>
+              <div class="standings-row advancing">
+                <span>1</span><span>EDG</span><span class="w-col">1</span><span class="l-col">0</span>
+              </div>
+              <div class="standings-row advancing">
+                <span>2</span><span>NRG</span><span class="w-col">—</span><span class="l-col">—</span>
+              </div>
+              <div class="standings-row neutral">
+                <span>3</span><span>FNC</span><span class="w-col">0</span><span class="l-col">0</span>
+              </div>
+              <div class="standings-row neutral">
+                <span>4</span><span>SEN</span><span class="w-col">0</span><span class="l-col">0</span>
+              </div>
+              <div class="standings-row neutral">
+                <span>5</span><span>PRX</span><span class="w-col">0</span><span class="l-col">0</span>
+              </div>
+              <div class="standings-row neutral">
+                <span>6</span><span>C9</span><span class="w-col">0</span><span class="l-col">0</span>
+              </div>
+              <div class="standings-row neutral">
+                <span>7</span><span>XLG</span><span class="w-col">—</span><span class="l-col">—</span>
+              </div>
+              <div class="standings-row eliminated">
+                <span>8</span><span>M8</span><span class="w-col">0</span><span class="l-col">1</span>
+              </div>
+            </div>
+            <div class="standings-legend">
+              <div class="leg-item"><span class="leg-dot" style="background:#4ade80"></span>Advancing</div>
+              <div class="leg-item"><span class="leg-dot" style="background:#94a3b8"></span>Neutral</div>
+              <div class="leg-item"><span class="leg-dot" style="background:#ff4655"></span>Eliminated</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── TAB: PICK'EM ── -->
+      <div class="tab-panel" id="tab-pickem">
+        <div class="pickem-wrap">
+          <div class="pickem-intro">
+            <h2>PICK'EM 2.0</h2>
+            <p>Drag and drop team logos to predict match winners. Your predictions are saved automatically.</p>
+            <div class="pickem-points" id="pickem-points">
+              <span class="pp-label">YOUR POINTS</span>
+              <span class="pp-val" id="pp-val">0</span>
+            </div>
+          </div>
+
+          <div class="pickem-grid" id="pickem-grid">
+            <!-- Dynamically populated by JS -->
+          </div>
+
+          <button class="btn btn-primary" style="margin-top:24px" onclick="savePickem()">SAVE PICKS →</button>
+          <button class="btn btn-ghost btn-sm" style="margin-top:12px" onclick="clearPickem()">Reset Picks</button>
+        </div>
+      </div>
+
+      <!-- ── TAB: WATCH & EARN ── -->
+      <div class="tab-panel" id="tab-drops">
+        <div class="drops-wrap">
+          <div class="drops-hero">
+            <div class="drops-hero-icon">🎁</div>
+            <h2>WATCH &amp; EARN</h2>
+            <p>Watch Masters Santiago 2026 to earn exclusive in-game rewards. Connect your Riot account to start earning.</p>
+          </div>
+
+          <div class="drops-grid">
+            <!-- Drop 1 -->
+            <div class="drop-card active-drop">
+              <div class="drop-icon-wrap">
+                <div class="drop-icon" style="background:linear-gradient(135deg,#ff4655,#ff6b35)">🔫</div>
+                <div class="drop-rarity-badge">EXCLUSIVE</div>
+              </div>
+              <div class="drop-info">
+                <div class="drop-name">Santiago 2026 Gun Buddy</div>
+                <div class="drop-desc">Equip the official Masters Santiago trophy gun buddy on your favorite weapon.</div>
+                <div class="drop-progress-wrap">
+                  <div class="drop-progress-label">
+                    <span>Watch Progress</span>
+                    <span id="drops-time-text">2h / 3h required</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" id="drop1-bar" style="width:67%"></div>
+                  </div>
+                </div>
+                <div class="drop-eta">⏱ ~1h remaining at current pace</div>
+              </div>
+            </div>
+
+            <!-- Drop 2 -->
+            <div class="drop-card locked-drop">
+              <div class="drop-icon-wrap">
+                <div class="drop-icon" style="background:linear-gradient(135deg,#a78bfa,#7c3aed)">🃏">🃏</div>
+                <div class="drop-rarity-badge rarity-epic">EPIC</div>
+              </div>
+              <div class="drop-info">
+                <div class="drop-name">Santiago 2026 Player Card</div>
+                <div class="drop-desc">Show your Masters Santiago pride with this animated player card.</div>
+                <div class="drop-progress-wrap">
+                  <div class="drop-progress-label"><span>Watch Progress</span><span>0h / 6h required</span></div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width:0%"></div>
+                  </div>
+                </div>
+                <div class="drop-locked-msg">🔒 Unlock Gun Buddy first</div>
+              </div>
+            </div>
+
+            <!-- Drop 3 -->
+            <div class="drop-card locked-drop">
+              <div class="drop-icon-wrap">
+                <div class="drop-icon" style="background:linear-gradient(135deg,#facc15,#b45309)">🏆</div>
+                <div class="drop-rarity-badge rarity-legendary">LEGENDARY</div>
+              </div>
+              <div class="drop-info">
+                <div class="drop-name">Santiago 2026 Spray</div>
+                <div class="drop-desc">Limited animated spray. Only available during Masters Santiago 2026.</div>
+                <div class="drop-progress-wrap">
+                  <div class="drop-progress-label"><span>Watch Progress</span><span>0h / 10h required</span></div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width:0%"></div>
+                  </div>
+                </div>
+                <div class="drop-locked-msg">🔒 Complete previous drops first</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="drops-connect">
+            <button class="btn btn-primary btn-lg" onclick="connectRiot()">CONNECT RIOT ACCOUNT</button>
+            <p style="color:var(--text-muted);font-size:0.8rem;margin-top:8px;font-family:var(--font-mono)">Drops activate automatically when account is linked</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── TAB: BRACKET ── -->
+      <div class="tab-panel" id="tab-bracket">
+        <div class="bracket-wrap">
+          <h2 style="margin-bottom:8px">SWISS STAGE BRACKET</h2>
+          <p style="color:var(--text-secondary);margin-bottom:28px">Feb 28 – Mar 9, 2026</p>
+          <div class="bracket-info">
+            <div class="bracket-round-card">
+              <div class="brc-label">ROUND 1</div>
+              <div class="brc-date">Feb 28</div>
+              <div class="brc-status active">IN PROGRESS</div>
+              <div class="brc-desc">8 matches · Best of 3</div>
+            </div>
+            <div class="bracket-arrow">→</div>
+            <div class="bracket-round-card upcoming-card">
+              <div class="brc-label">ROUND 2</div>
+              <div class="brc-date">Mar 1–2</div>
+              <div class="brc-status upcoming-status">UPCOMING</div>
+              <div class="brc-desc">Win / Loss pools</div>
+            </div>
+            <div class="bracket-arrow">→</div>
+            <div class="bracket-round-card upcoming-card">
+              <div class="brc-label">ROUND 3</div>
+              <div class="brc-date">Mar 3–4</div>
+              <div class="brc-status upcoming-status">UPCOMING</div>
+              <div class="brc-desc">Decider matches</div>
+            </div>
+            <div class="bracket-arrow">→</div>
+            <div class="bracket-round-card upcoming-card">
+              <div class="brc-label">PLAYOFFS</div>
+              <div class="brc-date">Mar 8–16</div>
+              <div class="brc-status upcoming-status">UPCOMING</div>
+              <div class="brc-desc">Top 8 advance</div>
+            </div>
+          </div>
+          <div class="bracket-teams-grid">
+            <h3 style="grid-column:1/-1;font-size:1rem;letter-spacing:0.15em;color:var(--text-muted);margin-bottom:4px">PARTICIPATING TEAMS (16)</h3>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/global.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/match-center.js"></script>
+</body>
+</html>

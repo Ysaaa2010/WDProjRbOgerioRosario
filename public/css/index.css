@@ -1,0 +1,391 @@
+/* ============================================================
+   VALORANT PROTOCOL 2026 — index.css
+   Faction Selection Landing Page Styles
+   Authors: Ysa Rosario & Nathan Ogerio
+   ============================================================ */
+
+.faction-select-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 40px 24px;
+  background: #080808;
+}
+
+/* ── Animated Background ── */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,70,85,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,70,85,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  animation: grid-drift 30s linear infinite;
+}
+@keyframes grid-drift {
+  from { background-position: 0 0; }
+  to   { background-position: 40px 40px; }
+}
+
+.bg-scanlines {
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.15) 2px,
+    rgba(0,0,0,0.15) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Header ── */
+.faction-header {
+  text-align: center;
+  margin-bottom: 52px;
+  position: relative;
+  z-index: 2;
+  animation: header-drop 0.8s ease;
+}
+@keyframes header-drop {
+  from { transform: translateY(-30px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+.faction-logo {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  margin: 0 auto 16px;
+  filter: drop-shadow(0 0 20px rgba(255,70,85,0.6));
+  animation: logo-pulse 3s ease infinite alternate;
+}
+@keyframes logo-pulse {
+  from { filter: drop-shadow(0 0 16px rgba(255,70,85,0.4)); }
+  to   { filter: drop-shadow(0 0 40px rgba(255,70,85,0.9)); }
+}
+
+.faction-tagline {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--primary);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.faction-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-shadow: 0 0 60px rgba(255,70,85,0.3);
+  line-height: 1;
+}
+
+.faction-subtitle {
+  margin-top: 16px;
+  font-size: clamp(0.85rem, 2vw, 1.05rem);
+  color: rgba(255,255,255,0.5);
+  line-height: 1.7;
+  font-family: var(--font-body);
+  max-width: 460px;
+  margin-inline: auto;
+}
+
+/* ── Cards Container ── */
+.faction-cards {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  max-width: 900px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  animation: cards-rise 1s ease 0.3s backwards;
+}
+@keyframes cards-rise {
+  from { transform: translateY(40px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* ── Faction Card ── */
+.faction-card {
+  flex: 1;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.07);
+  transition: all 0.4s ease;
+}
+
+.faction-card:hover {
+  transform: scale(1.03);
+  z-index: 3;
+}
+.faction-alpha:hover { border-color: #00c8d4; }
+.faction-omega:hover { border-color: #ff4655; }
+
+.faction-card-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(22,22,22,0.95);
+}
+
+.faction-card-glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.faction-alpha .faction-card-glow {
+  background: radial-gradient(ellipse at 50% 50%, rgba(0,200,212,0.12), transparent 70%);
+}
+.faction-omega .faction-card-glow {
+  background: radial-gradient(ellipse at 50% 50%, rgba(255,70,85,0.12), transparent 70%);
+}
+.faction-card:hover .faction-card-glow { opacity: 1; }
+
+.faction-card-inner {
+  position: relative;
+  z-index: 2;
+  padding: 44px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  height: 100%;
+}
+
+/* ── Emblem ── */
+.faction-emblem {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.faction-emblem-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid #00c8d4;
+  animation: ring-spin 8s linear infinite;
+  opacity: 0.6;
+}
+.omega-emblem .faction-emblem-ring { border-color: #ff4655; }
+
+@keyframes ring-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.faction-emblem-ring::before {
+  content: '';
+  position: absolute;
+  width: 8px; height: 8px;
+  background: #00c8d4;
+  border-radius: 50%;
+  top: -4px; left: 50%; transform: translateX(-50%);
+}
+.omega-emblem .faction-emblem-ring::before { background: #ff4655; }
+
+.faction-emblem-letter {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #00c8d4;
+  font-family: var(--font-display);
+  text-shadow: 0 0 20px rgba(0,200,212,0.6);
+  z-index: 1;
+}
+.omega-emblem .faction-emblem-letter {
+  color: #ff4655;
+  text-shadow: 0 0 20px rgba(255,70,85,0.6);
+}
+
+.faction-card-name {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  color: #fff;
+}
+.faction-alpha .faction-card-name { color: #00c8d4; text-shadow: 0 0 20px rgba(0,200,212,0.4); }
+.faction-omega .faction-card-name { color: #ff4655; text-shadow: 0 0 20px rgba(255,70,85,0.4); }
+
+.faction-card-origin {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  color: rgba(255,255,255,0.4);
+  margin-top: -8px;
+}
+
+.faction-card-lore {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+  max-width: 280px;
+  font-family: var(--font-body);
+}
+
+.faction-card-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  padding: 16px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.fstat {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+}
+.fstat-label { color: rgba(255,255,255,0.4); font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; }
+.fstat-value { color: rgba(255,255,255,0.8); font-weight: 600; }
+.alpha-text { color: #00c8d4; }
+.omega-text { color: #ff4655; }
+
+/* ── Select Buttons ── */
+.faction-select-btn {
+  margin-top: auto;
+  padding: 14px 32px;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: 2px solid;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.faction-select-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 0; height: 0;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+.faction-select-btn:hover::before { width: 300px; height: 300px; opacity: 0.1; }
+
+.faction-btn-alpha {
+  background: rgba(0,200,212,0.1);
+  border-color: #00c8d4;
+  color: #00c8d4;
+}
+.faction-btn-alpha:hover {
+  background: #00c8d4;
+  color: #000;
+  box-shadow: 0 0 30px rgba(0,200,212,0.4);
+}
+
+.faction-btn-omega {
+  background: rgba(255,70,85,0.1);
+  border-color: #ff4655;
+  color: #ff4655;
+}
+.faction-btn-omega:hover {
+  background: #ff4655;
+  color: #fff;
+  box-shadow: 0 0 30px rgba(255,70,85,0.4);
+}
+
+/* ── VS Divider ── */
+.vs-divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 16px;
+  z-index: 4;
+  position: relative;
+}
+.vs-line {
+  flex: 1;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.1), transparent);
+}
+.vs-text {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.1em;
+}
+
+/* ── Hint ── */
+.faction-hint {
+  margin-top: 40px;
+  position: relative;
+  z-index: 2;
+  animation: cards-rise 1s ease 0.6s backwards;
+}
+.faction-hint-text {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.1em;
+}
+kbd {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 3px;
+  padding: 1px 6px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--primary);
+}
+
+/* ── Footer ── */
+.faction-footer {
+  margin-top: 32px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.2);
+  position: relative;
+  z-index: 2;
+}
+.faction-footer span { color: rgba(255,255,255,0.15); }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .faction-cards {
+    flex-direction: column;
+    max-width: 400px;
+  }
+  .vs-divider {
+    flex-direction: row;
+    padding: 10px 0;
+    width: 100%;
+  }
+  .vs-line {
+    flex: 1;
+    height: 1px;
+    width: auto;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+  }
+  .faction-card-inner { padding: 32px 24px; }
+}
