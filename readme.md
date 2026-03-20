@@ -1,137 +1,153 @@
-# VALORANT HUB  
-**Project Team Name:** WDProjRbOgerioRosario 
-**Quarter:** 3rd Quarter Project Proposal  
+# VALORANT: THE OMEGA BREACH
+### A VALORANT Informational Website
+
+> Earth-1 and Earth-2 stand at the edge of annihilation. Choose your allegiance. The breach begins now.
+
+A fan-made, non-affiliated informational website about VALORANT featuring Agents, Arsenal, Maps, Live Esports Hub, and more — built as a Web Development project.
 
 ---
 
-## Website Title
-**Valorant Hub**
+## TABLE OF CONTENTS
 
-## Secondary Website Title
-**Master the Art of Valorant**
-
----
-
-## Logo
-
-![Favicon](/public/assets/valorant.png)
-
-## Website Description
-Valorant Hub is a fan-made informational website focused on the tactical shooter game **VALORANT** developed by Riot Games. The website is designed to present important game-related information in a clear, organized, and visually structured way.
-
-The goal of the website is to help both new and experienced players better understand the game by providing easy access to information about agents, weapons, maps, and esports. The website combines structured layouts with interactive features to create an engaging and educational browsing experience.
+- [Project Description](#project-description)
+- [Pages Overview](#pages-overview)
+- [Technologies Used](#technologies-used)
+- [Team](#team)
+- [FINAL MODIFICATION PROPOSAL](#final-modification-proposal)
 
 ---
 
-## Website Pages Outline
+## Project Description
 
-### Home
-The Home page serves as the main landing page of the website. It introduces the purpose of Valorant Hub and gives users a general overview of what the website offers. This page includes a hero banner, short descriptions of major sections, and navigation links that guide users to other parts of the website.
-
-![Home](public/1.png)
-
-### Agents
-The Agents page displays a collection of Valorant agents arranged in a grid layout. Agents are grouped based on their roles, such as Duelist, Controller, Initiator, and Sentinel. This page helps users understand the different roles in Valorant and how each agent contributes to team gameplay.
-
-![Agent](public/2.png)
-
-### Weapons
-The Weapons page presents the Valorant weapon arsenal categorized into sidearms, SMGs, rifles, and shotguns. Each weapon category is displayed in a structured format that allows users to browse and compare weapon types easily.
-
-![Weapons](public/3.png)
-
-### Maps
-The Maps page features a table that lists the different Valorant maps. The table includes the map name, type, and a visual preview. This page helps users become familiar with the environments where matches take place.
-
-![Maps](public/4.png)
-
-### Esports
-The Esports page provides information about the competitive side of Valorant. It highlights major tournaments, professional teams, and explains the role of esports in the Valorant community.
-
-![Esports](public/5.png)
-
-### User Access
-The User Access page contains an HTML form that allows users to input basic information and preferences. This page demonstrates how user input can be collected using forms and handled using JavaScript.
+VALORANT: The Omega Breach is a game informational website that covers everything a player needs to know about VALORANT. It uses a narrative framing of two opposing factions — **Alpha (Earth-1)** and **Omega (Earth-2)** — as its visual theme.
 
 ---
 
-## JavaScript Integration Explanation
-JavaScript is used across the website to enhance interactivity and improve user experience. It is responsible for features such as interactive navigation, dynamic content display, and table organization.
+## Pages Overview
 
-JavaScript is also used to handle form submissions by saving user input using the browser’s local storage. This allows the website to store user data without requiring an online database and demonstrates basic client-side data handling.
-
----
-
-## HTML Form Design and Narrative
-
-### Purpose of the HTML Form
-The HTML form is designed to collect basic user information such as a username, preferred agent role, and favorite weapon category. The purpose of the form is to demonstrate how websites gather user input in a structured and controlled way.
-
-### Data Storage Method
-All data collected from the form is saved using JavaScript’s `localStorage` feature. This allows the information to be stored locally on the user’s computer through the browser.
-
-### Usage of Collected Data
-The collected data is used on other pages of the website to demonstrate how saved information can be retrieved and reused. This shows how websites can maintain data even after the page is refreshed.
+| Page | Description |
+|------|-------------|
+| **Home** | Summary of all site content and latest highlights |
+| **Agents** | Detailed info on all VALORANT agents |
+| **Arsenal** | Weapon stats and descriptions |
+| **Maps** | Map layouts and callout info |
+| **LiveHub** | Live esports news and match updates |
+| **Architects** | About the team behind the site |
+| **Sign Up** | Register a new account |
+| **Sign In** | Log into an existing account |
 
 ---
 
-## Webpages Using the HTML Form Data
+## Team
 
-### User Form Page
-This page contains the HTML form where users enter their information and preferences, AKA the signup and login page. Once the form is submitted, JavaScript processes the input and saves the data to local storage.
-
-### User Information Page
-The User Information page displays the information previously submitted by the user. It shows stored data such as the username and preferences, confirming that the data was saved successfully. Aside from this, it contains personalized data like their favourite map or gun.
-
-### Community/Feedback Polls Page
-The Community Polls page allows users to participate in simple polls related to Valorant, such as favorite agent role or preferred weapon type. Poll responses are stored using local storage and displayed in a summarized format, demonstrating how collected data can be reused in an interactive and engaging way. Aside from this, this page also serves as feedback or a survey on a scale of how the website is actually helpful.
+- **Nathan Ogerio**
+- **Ysa Rosario**
 
 ---
 
-## Wireframe and Mock-Up Description
-Each webpage follows a consistent layout consisting of a header, main content area, and footer. The header includes the website logo and navigation bar, while the main content area displays text, images, tables, or forms depending on the page.
+---
 
-The wireframes clearly show the placement of page titles, section headers, navigation elements, and content sections to ensure the layout is easy to understand and navigate.
+# FINAL MODIFICATION PROPOSAL
+
+## Overview
+
+This section outlines the final modification to the **VALORANT: The Omega Breach** website. The update introduces a complete **Full CRUD (Create, Read, Update, Delete)** process on data stored in `localStorage`, building on the Sign Up and Sign In features already in the project.
 
 ---
 
-## Navigation Design
-The navigation bar is present on all pages of the website and allows users to easily move between the Home, Agents, Weapons, Maps, Esports, and User Access pages. This consistent navigation design ensures a smooth browsing experience.
+## Description: Purpose and How CRUD Is Implemented
+
+### What Data Is Being Managed?
+
+When a user registers via the **Sign Up** page, their account information is saved to `localStorage`. This currently includes:
+
+- `username`
+- `email`
+- `password`
+- `dateCreated`
+
+Additionally, users who are signed in can **bookmark/favorite** items across the Agents, Arsenal, and Maps pages. These preferences are stored in `localStorage` under a key tied to their account: `favorites_<username>`.
 
 ---
 
-## Footer Design
-Each webpage includes a footer located at the bottom of the page. The footer contains copyright information, source citations, and social media links. Social media links are displayed using well-known image sprites such as Facebook, Twitter (X), YouTube, and Instagram.
+### The Full CRUD Breakdown
+
+| Operation | Page | What It Does |
+|-----------|------|-------------|
+| **CREATE** | Sign Up *(existing)* | Registers a new user; saves their account object to `localStorage` |
+| **CREATE** | Agents / Arsenal / Maps *(updated)* | Adds a ★ Save Favorite button on each card; saves item to favorites list in `localStorage` |
+| **READ** | User Profile Page *(new)* | Retrieves and displays the user's saved account details and favorites list from `localStorage` |
+| **UPDATE** | User Profile Page — Edit Modal *(new)* | Allows the user to change their username, email, or password; saves the updated object back to `localStorage` |
+| **DELETE** | User Profile Page *(new)* | Two forms: (1) Remove a single saved favorite item from the list; (2) Permanently delete the entire account and all associated data from `localStorage` |
 
 ---
 
-# 3rd Q Update
+### How It Is Used — User Journey
 
-## Final Title
-Valorant Hub
+1. A visitor browses the site — reading about agents, weapons, maps, and esports news.
+2. They **sign up** — their account is saved to `localStorage`. *(CREATE — existing)*
+3. On return visits, they **sign in** and their info is loaded. *(READ — existing)*
+4. While browsing **Agents, Arsenal, or Maps**, a signed-in user sees a ★ Save Favorite button on each card. Clicking it saves that item to their favorites list in `localStorage`. *(CREATE — new)*
+5. On the new **User Profile page**, users can:
+   - View their account info and full favorites list. *(READ)*
+   - Click **Edit** next to any field to open a modal and change their username, email, or password. On save, the updated data overwrites the old record in `localStorage`. *(UPDATE)*
+   - Click **✕ Remove** next to any saved favorite to delete just that item from their list. *(DELETE — partial)*
+   - Click **Delete Account** to trigger a confirmation modal, then wipe all their data from `localStorage` and be redirected to the Home page. *(DELETE — full)*
 
-## Two-Sentence Description
-Valorant Hub is an informational website created to help players learn more about Valorant’s agents, weapons, maps, and esports scene. The website combines structured content and interactive elements to support an engaging and educational experience.
+---
+
+### localStorage Keys Used
+
+| Key | Contents | Operations |
+|-----|----------|------------|
+| `users` | Array of all registered user objects | CREATE, READ, UPDATE, DELETE |
+| `currentUser` | Username string of the logged-in user | READ, DELETE |
+| `favorites_<username>` | Object with `agents[]`, `weapons[]`, `maps[]` | CREATE, READ, DELETE |
+
+---
+
+### Pages Affected
+
+| Page | Status | Changes |
+|------|--------|---------|
+| Sign Up | Existing | No change |
+| Sign In | Existing | No change |
+| Agents | Updated | Add ★ Save Favorite button to each agent card |
+| Arsenal | Updated | Add ★ Save Favorite button to each weapon card |
+| Maps | Updated | Add ★ Save Favorite button to each map card |
+| **User Profile** | **New** | CRUD hub — view info, edit profile, remove favorites, delete account |
+
+---
+
+## Wireframes
+
+### Wireframe 1 — Agents / Arsenal / Maps Pages (Updated)
+**CRUD: CREATE — Save a Favorite**
+ ![Wireframe 1](1.png)
+Each agent, weapon, and map card now includes a ★ Save Favorite button visible to signed-in users. Clicking the button saves that item to the user's favorites list in `localStorage` under the key `favorites_<username>`. The button changes appearance to indicate the item has already been saved. This same behavior applies identically across the Agents, Arsenal, and Maps pages.
+
+---
+
+### Wireframe 2 — User Profile Page (New Page)
+**CRUD: READ, UPDATE, DELETE**
+![Wireframe 1](2.png)
+The new User Profile page is the central hub for managing user data. It is split into two panels. The left panel displays the user's account details — username, email, and password — each with an Edit button beside it. The right panel shows the user's saved favorites grouped by category (Agents, Weapons, Maps), each with a Remove button. At the bottom of the page is a Delete Account button. All data displayed is retrieved directly from `localStorage`.
+
+---
+
+### Wireframe 3 — Edit Profile Modal
+**CRUD: UPDATE**
+![Wireframe 1](3.png)
+Clicking the Edit button beside any account field opens a modal overlay on top of the Profile page. The modal contains input fields for username, email, new password, and confirm password, pre-filled with the current values. On clicking Save Changes, the inputs are validated (no empty required fields, passwords must match), the user object in `localStorage` is overwritten with the new values, a success message is shown, and the modal closes with the profile page refreshing to reflect the changes.
+
+---
+
+### Wireframe 4 — Delete Account Confirmation Modal
+**CRUD: DELETE (Full Account)**
+![Wireframe 1](4.png)
+Clicking Delete Account on the Profile page opens a confirmation modal. The modal warns the user that all their data including saved favorites will be permanently removed and cannot be undone. The user must type their username into a field to confirm the action. On clicking Yes, Delete, the user's object is removed from the `users` array in `localStorage`, the `favorites_<username>` key is deleted, the `currentUser` session is cleared, and the user is redirected to the Home page.
+
+---
 
 
-## Features
-- The website includes interactive visual elements that make the pages more engaging and dynamic. When users hover over weapon or agent cards, the cards flip to reveal additional information, and the hovered card is highlighted in red to clearly indicate user interaction.
-- The homepage features tips presented with images and subtle shadow effects. These design elements create a three-dimensional appearance that adds depth and improves the overall visual appeal of the website.
-- The website contains organized and clearly structured pages dedicated to agents, weapons, maps, and esports content, allowing users to navigate and access information easily.
-- JavaScript is used to implement interactive features such as hover effects, dynamic tables, navigation behavior, and community polls.
-- An HTML form is integrated into the website to collect user information and preferences, which are stored using browser-based storage to demonstrate basic data persistence.
-
-## Details
-- The Valorant Hub website is developed using HTML, CSS, and JavaScript to create an interactive and visually engaging experience. HTML is used to structure the content of the website, including text, images, cards, tables, and forms. CSS is applied to design the layout, color scheme, hover animations, card flip effects, and shadow elements that give the website a three-dimensional appearance.
-
-- JavaScript is used to control interactive features throughout the website. These features include hover-based card interactions for agents and weapons, table behaviors, navigation effects, and community polls. JavaScript is also responsible for processing form submissions and managing user input.
-
-- User data collected through the HTML form is stored using the browser’s local storage feature. This allows the website to save user preferences directly on the user’s computer and retrieve them when needed. Overall, the website demonstrates how design and functionality can work together to create an informative, interactive, and user-friendly web experience.
-
-
-## Definition of Done
-The project will be considered complete when all webpages are functional, navigation works across all pages, JavaScript features operate correctly, user data is successfully stored and retrieved, and the final website aligns with the visual representation that we want or approve. 
-
-
-
-
+*© 2026 @NathanOgerioYsaRosario. VALORANT: The Omega Breach — Web Development Project. Not affiliated with Riot Games.*
